@@ -1,266 +1,415 @@
 <!DOCTYPE html>
-<html lang="zh-cmn-Hans">
+<html lang="en">
+
 <head>
-  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Tonya&#39;s Blog</title>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8" />
+    
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <title>
+    Tag: chatbot |  Tonya&#39;s Blog
+  </title>
+  <meta name="generator" content="hexo-theme-yilia-plus">
   
+  <link rel="shortcut icon" href="/favicon.ico" />
   
+  <link rel="stylesheet" href="/css/style.css">
+  <script src="/js/pace.min.js"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
   
-  <!--link rel="stylesheet" href="//cdn.jsdelivr.net/highlight.js/9.10.0/styles/github-gist.min.css"-->
-  <link rel="stylesheet" href="//cdn.jsdelivr.net/highlight.js/9.10.0/styles/github-gist.min.css">
-  <link rel="stylesheet" href="/css/style.css"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+  
+
 </head>
 
+</html>
+
 <body>
-<!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="Shell">
-    <aside class='SideBar'>
-    <section class='avatar' style="background-image: url()">
-        <div class='av-pic' style="background-image: url()">
-        </div>
-    </section>
-    <section class='menu'>
-        <div>Tonya&#39;s Blog</div>
-        
-        <ul>
-          
-            <a href="/" class="Btn">
-              <li>Home</li>
-            </a>  
-          
-            <a href="/archives/" class="Btn">
-              <li>Archive</li>
-            </a>  
-          
-        </ul>
-    </section>
-    <section class="media">
-        
-    </section>
-</aside>
-
-    <div class="container">
-        <div data-pager-shell>
-            <ul class="Index">
-  
-    <header class='PageTitle'>
-        <h1>{ chatbot }</h1>
-    </header>
-  
-  
-    <li>
-      <article class='ListView'>
-    <header class="title">
-      
-        <h1>
-          <a href="/2016/12/20/A Simple,Fast Diverse Decoding Algorithm for Neural Generation_Tonya/">A Simple, Fast Diverse Decoding Algorithm for Neural Generation</a>
-        </h1>
-      
-      <div class='ListMeta'>
-  <time datetime="2016-12-20T12:10:16.000Z" itemprop="datePublished">
-    2016-12-20
-  </time>
-  
-  | 
-  <ul>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="app">
+    <main class="content">
+      <section class="outer">
+  <article class="articles">
     
-  <li class="meta-text">
-  { <a href="/tags/NLP/">NLP</a> }
-  </li>
-
-  <li class="meta-text">
-  { <a href="/tags/RL/">RL</a> }
-  </li>
-
-  <li class="meta-text">
-  { <a href="/tags/chatbot/">chatbot</a> }
-  </li>
-
-
-  </ul>
-  
-  
-  / 
-  <ul>
     
-  <li class="meta-text">
-  { <a href="/categories/论文/">论文</a> }
-  </li>
-
-
-  </ul>
+    <h1 class="page-type-title">#&nbspchatbot</h1>
+    
+    
   
-</div>
+  
+  
+  
+  
+  
+  <div class="archives-wrap">
+    <div class="archive-year-wrap">
+      <a href="/archives/2016" class="archive-year">2016</a>
+    </div>
+    <div class="archives">
+      
+      <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      <a href="/2016/12/20/A Simple,Fast Diverse Decoding Algorithm for Neural Generation_Tonya/" class="archive-article-date">
+  <time datetime="2016-12-20T12:10:16.000Z" itemprop="datePublished">12/20</time>
+</a>
+       
+<h2 itemprop="name">
+  <a class="archive-article-title" href="/2016/12/20/A Simple,Fast Diverse Decoding Algorithm for Neural Generation_Tonya/"
+    >A Simple, Fast Diverse Decoding Algorithm for Neural Generation</a
+  >
+</h2>
+  
 
     </header>
-    <div>
+    
+    
       
-        <h1 id="A-Simple-Fast-Diverse-Decoding-Algorithm-for-Neural-Generation"><a href="#A-Simple-Fast-Diverse-Decoding-Algorithm-for-Neural-Generation" class="headerlink" title="A Simple, Fast Diverse Decoding Algorithm for Neural Generation"></a><a href="https://arxiv.org/abs/1611.08562" target="_blank" rel="noopener">A Simple, Fast Diverse Decoding Algorithm for Neural Generation</a></h1><h2 id="作者"><a href="#作者" class="headerlink" title="作者"></a>作者</h2><p>Jiwei Li, Will Monroe and Dan Jurafsky</p>
-<h2 id="单位"><a href="#单位" class="headerlink" title="单位"></a>单位</h2><p>Stanford</p>
-<h2 id="关键词"><a href="#关键词" class="headerlink" title="关键词"></a>关键词</h2><p>seq2seq, diversity, RL</p>
-<h2 id="文章来源"><a href="#文章来源" class="headerlink" title="文章来源"></a>文章来源</h2><p>arXiv</p>
-<h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><p>seq2seq模型decoder时改进beam search，引入惩罚因子影响排序结果，并加入强化学习模型来自动学习diversity rate，使得解码出的结果更具多样性</p>
-<h2 id="模型"><a href="#模型" class="headerlink" title="模型"></a>模型</h2><p><img src="http://7xpodp.com1.z0.glb.clouddn.com/blog/20161215/223245715.png" alt=""><br>对比标准beam search，本模型引入惩罚因子，公式如下<br><img src="http://7xpodp.com1.z0.glb.clouddn.com/blog/20161216/153402399.png" alt=""><br>其中$\gamma$称为diversity rate，k’范围为[1,k]，K为beam size<br>强化学习模型中，策略为<br><img src="http://7xpodp.com1.z0.glb.clouddn.com/blog/20161216/153522629.png" alt=""><br>reward为评价指标，例如机器翻译中的BLEU值等</p>
-<h2 id="资源"><a href="#资源" class="headerlink" title="资源"></a>资源</h2><p>回复生成实验数据集：OpenSubtitles<br><a href="https://github.com/jiweil/mutual-information-for-neural-machine-translation" target="_blank" rel="noopener">代码模型可从作者另外一篇文章的源码稍加改动</a></p>
-<p>机器翻译数据集：<a href="http://www.statmt.org/wmt13/
-translation-task.html" target="_blank" rel="noopener">WMT’14</a></p>
-<h2 id="相关工作"><a href="#相关工作" class="headerlink" title="相关工作"></a>相关工作</h2><p><img src="http://7xpodp.com1.z0.glb.clouddn.com/blog/20161216/231134530.png" alt=""></p>
-<h2 id="简评-（必选）"><a href="#简评-（必选）" class="headerlink" title="简评 （必选）"></a>简评 （必选）</h2><p>本模型的创新点在于引入惩罚因子，使得decoder时对standard beam search算法进行重排序，并引入强化学习模型，自动学习diversity rate。作者分别在三个实验上进行验证，机器翻译、摘要抽取与对话回复生成，实验表明在不同的实验上有不同的表现，但是总体而言本方法能够在一定程度上解码出更具有多样性的句子。（思路简明清晰，对于传统的beam search稍加改动，原文中作者提到在Matlab代码中只改动一行即可）</p>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/NLP/">NLP</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/RL/">RL</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/chatbot/">chatbot</a></li></ul>
 
+    
+  </div>
+</article>
+      
+  
+  
+      <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      <a href="/2016/11/10/Deep Reinforcement Learning for Dialogue Generation/" class="archive-article-date">
+  <time datetime="2016-11-09T16:00:00.000Z" itemprop="datePublished">11/10</time>
+</a>
+       
+<h2 itemprop="name">
+  <a class="archive-article-title" href="/2016/11/10/Deep Reinforcement Learning for Dialogue Generation/"
+    >论文速读《Deep Reinforcement Learning for Dialogue Generation》</a
+  >
+</h2>
+  
+
+    </header>
+    
+    
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/NLP/">NLP</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/RL/">RL</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/chatbot/">chatbot</a></li></ul>
+
+    
+  </div>
+</article>
+      
+  
+  
+      <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      <a href="/2016/11/02/On-line Active Reward Learning for Policy Optimisation in Spoken Dialogue Systems/" class="archive-article-date">
+  <time datetime="2016-11-01T16:00:00.000Z" itemprop="datePublished">11/02</time>
+</a>
+       
+<h2 itemprop="name">
+  <a class="archive-article-title" href="/2016/11/02/On-line Active Reward Learning for Policy Optimisation in Spoken Dialogue Systems/"
+    >论文速读《On-line Active Reward Learning for Policy Optimisation in Spoken Dialogue Systems》</a
+  >
+</h2>
+  
+
+    </header>
+    
+    
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/RL/">RL</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/chatbot/">chatbot</a></li></ul>
+
+    
+  </div>
+</article>
+      
       
     </div>
-</article>
-
-    </li>
-  
-    <li>
-      <article class='ListView'>
-    <header class="title">
-      
-        <h1>
-          <a href="/2016/11/10/Deep Reinforcement Learning for Dialogue Generation/">论文速读《Deep Reinforcement Learning for Dialogue Generation》</a>
-        </h1>
-      
-      <div class='ListMeta'>
-  <time datetime="2016-11-09T16:00:00.000Z" itemprop="datePublished">
-    2016-11-10
-  </time>
-  
-  | 
-  <ul>
-    
-  <li class="meta-text">
-  { <a href="/tags/NLP/">NLP</a> }
-  </li>
-
-  <li class="meta-text">
-  { <a href="/tags/RL/">RL</a> }
-  </li>
-
-  <li class="meta-text">
-  { <a href="/tags/chatbot/">chatbot</a> }
-  </li>
-
-
-  </ul>
+  </div>
   
   
-  / 
-  <ul>
-    
-  <li class="meta-text">
-  { <a href="/categories/论文/">论文</a> }
-  </li>
 
-
-  </ul>
   
-</div>
-
-    </header>
-    <div>
-      
-        <h2 id="原文链接"><a href="#原文链接" class="headerlink" title="原文链接"></a><a href="https://arxiv.org/abs/1606.01541" target="_blank" rel="noopener">原文链接</a></h2><h2 id="作者"><a href="#作者" class="headerlink" title="作者"></a>作者</h2><p>Jiwei Li</p>
-<h2 id="单位"><a href="#单位" class="headerlink" title="单位"></a>单位</h2><p>斯坦福</p>
-<h2 id="关键词"><a href="#关键词" class="headerlink" title="关键词"></a>关键词</h2><p>Reinforcement Learning, seq2seq, text generation</p>
-<h2 id="文章来源"><a href="#文章来源" class="headerlink" title="文章来源"></a>文章来源</h2><p>arXiv.org(2016.06.25) &amp; EMNLP2016</p>
-<h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><p>本文提出利用强化学习进行开放领域的文本生成任务，并对比了有监督的seq2seq加attention模型和基于最大互信息的模型</p>
+</section>
+      <footer class="footer">
+  <div class="outer">
+    <ul class="list-inline">
+      <li>
+        &copy;
+        2015-2020
+        Tonya Tsao
+      </li>
+      <li>
         
-          <div class="more-link">
-            <a href="/2016/11/10/Deep Reinforcement Learning for Dialogue Generation/#more">Read On »</a>
-          </div>
+        Powered by
         
-      
-    </div>
-</article>
-
-    </li>
-  
-    <li>
-      <article class='ListView'>
-    <header class="title">
-      
-        <h1>
-          <a href="/2016/11/02/On-line Active Reward Learning for Policy Optimisation in Spoken Dialogue Systems/">论文速读《On-line Active Reward Learning for Policy Optimisation in Spoken Dialogue Systems》</a>
-        </h1>
-      
-      <div class='ListMeta'>
-  <time datetime="2016-11-01T16:00:00.000Z" itemprop="datePublished">
-    2016-11-02
-  </time>
-  
-  | 
-  <ul>
-    
-  <li class="meta-text">
-  { <a href="/tags/RL/">RL</a> }
-  </li>
-
-  <li class="meta-text">
-  { <a href="/tags/chatbot/">chatbot</a> }
-  </li>
-
-
-  </ul>
-  
-  
-  / 
-  <ul>
-    
-  <li class="meta-text">
-  { <a href="/categories/论文/">论文</a> }
-  </li>
-
-
-  </ul>
-  
-</div>
-
-    </header>
-    <div>
-      
-        <h2 id="原文链接"><a href="#原文链接" class="headerlink" title="原文链接"></a><a href="https://arxiv.org/abs/1605.07669" target="_blank" rel="noopener">原文链接</a></h2><h2 id="作者"><a href="#作者" class="headerlink" title="作者"></a>作者</h2><p>Pei-Hao Su, Milica Gasic, Nikola Mrksic, Lina Rojas-Barahona, Stefan Ultes, David Vandyke, Tsung-Hsien Wen, Steve Young</p>
-<h2 id="单位"><a href="#单位" class="headerlink" title="单位"></a>单位</h2><p>剑桥 </p>
-<h2 id="关键词"><a href="#关键词" class="headerlink" title="关键词"></a>关键词</h2><p>对话系统、强化学习、在线主动奖励学习(On-line Active Reward Learning)</p>
-<h2 id="文章来源"><a href="#文章来源" class="headerlink" title="文章来源"></a>文章来源</h2><p>ACL 2016</p>
-<h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><p>文章提出一种在线学习框架，通过高斯过程分类模型进行主动学习，训练对话策略和奖励模型，减少数据标注的花费和用户反馈中的噪声。<br>
         
-          <div class="more-link">
-            <a href="/2016/11/02/On-line Active Reward Learning for Policy Optimisation in Spoken Dialogue Systems/#more">Read On »</a>
-          </div>
+        <a href="https://hexo.io" target="_blank">Hexo</a> Theme <a href="https://github.com/Shen-Yu/hexo-theme-ayer" target="_blank">Ayer</a>
         
-      
-    </div>
-</article>
-
-    </li>
-  
-</ul>
-
-
-
-            <footer>
-    <div>© 2020 - Tonya Tsao </div>
-    <div>
+      </li>
+    </ul>
+    <ul class="list-inline">
+      <li>
+        
+        
         <span>
-            Powered by <a href="https://hexo.io">Hexo</a>
-        </span>
-        ,
-        <span>
-            Theme - <a href="https://github.com/nameoverflow/hexo-theme-icalm">Icalm</a>
-        </span>
-    </div>
+  <i>PV:<span id="busuanzi_value_page_pv"></span></i>
+  <i>UV:<span id="busuanzi_value_site_uv"></span></i>
+</span>
+        
+      </li>
+      
+      <li>
+        <!-- cnzz统计 -->
+        
+        <script type="text/javascript" src='https://s9.cnzz.com/z_stat.php?id=1278069914&amp;web_id=1278069914'></script>
+        
+      </li>
+    </ul>
+  </div>
 </footer>
+      <div class="to_top">
+        <div class="totop" id="totop">
+  <i class="ri-arrow-up-line"></i>
+</div>
+      </div>
+    </main>
+    <aside class="sidebar">
+      <button class="navbar-toggle"></button>
+<nav class="navbar">
+  
+  <div class="logo">
+    <a href="/"><img src="/images/ayer-side.svg" alt="Tonya&#39;s Blog"></a>
+  </div>
+  
+  <ul class="nav nav-main">
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/">主页</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/archives">归档</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/categories">分类</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/tags">标签</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/tags/旅行/">旅行</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="http://shenyu-vip.lofter.com">摄影</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/2019/about">关于我</a>
+    </li>
+    
+  </ul>
+</nav>
+<nav class="navbar navbar-bottom">
+  <ul class="nav">
+    <li class="nav-item">
+      
+      <a class="nav-item-link nav-item-search"  title="Search">
+        <i class="ri-search-line"></i>
+      </a>
+      
+      
+      <a class="nav-item-link" target="_blank" href="/atom.xml" title="RSS Feed">
+        <i class="ri-rss-line"></i>
+      </a>
+      
+    </li>
+  </ul>
+</nav>
+<div class="search-form-wrap">
+  <div class="local-search local-search-plugin">
+  <input type="search" id="local-search-input" class="local-search-input" placeholder="Search...">
+  <div id="local-search-result" class="local-search-result"></div>
+</div>
+</div>
+    </aside>
+    <div id="mask"></div>
+
+<!-- #reward -->
+<div id="reward">
+  <span class="close"><i class="ri-close-line"></i></span>
+  <p class="reward-p"><i class="ri-cup-line"></i>请我喝杯咖啡吧~</p>
+  <div class="reward-box">
+    
+    <div class="reward-item">
+      <img class="reward-img" src="/images/alipay.jpg">
+      <span class="reward-type">支付宝</span>
+    </div>
+    
+    
+    <div class="reward-item">
+      <img class="reward-img" src="/images/wechat.jpg">
+      <span class="reward-type">微信</span>
+    </div>
+    
+  </div>
+</div>
+    <script src="/js/jquery-2.0.3.min.js"></script>
+<script src="/js/jquery.justifiedGallery.min.js"></script>
+<script src="/js/lazyload.min.js"></script>
+<script src="/js/busuanzi-2.3.pure.min.js"></script>
+<script src="/js/share.js"></script>
+
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+<script>
+  try {
+    var typed = new Typed("#subtitle", {
+    strings: ['面朝大海，春暖花开','愿你一生努力，一生被爱','想要的都拥有，得不到的都释怀'],
+    startDelay: 0,
+    typeSpeed: 200,
+    loop: true,
+    backSpeed: 100,
+    showCursor: true
+    });
+  } catch (err) {
+  }
+  
+</script>
+
+
+
+
+<script>
+  var ayerConfig = {
+    mathjax: false
+  }
+</script>
+
+<script src="/js/ayer.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.css">
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" style="display:none" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
 
         </div>
-    </div>
-</div>
-<script src="/js/pager/dist/singlepager.js"></script>
-<script>
-var sp = new Pager('data-pager-shell')
 
+    </div>
+
+</div>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css">
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"></script>
+
+<script>
+    function viewer_init() {
+        let pswpElement = document.querySelectorAll('.pswp')[0];
+        let $imgArr = document.querySelectorAll(('.article-entry img:not(.reward-img)'))
+
+        $imgArr.forEach(($em, i) => {
+            $em.onclick = () => {
+                // slider展开状态
+                // todo: 这样不好，后面改成状态
+                if (document.querySelector('.left-col.show')) return
+                let items = []
+                $imgArr.forEach(($em2, i2) => {
+                    let img = $em2.getAttribute('data-idx', i2)
+                    let src = $em2.getAttribute('data-target') || $em2.getAttribute('src')
+                    let title = $em2.getAttribute('alt')
+                    // 获得原图尺寸
+                    const image = new Image()
+                    image.src = src
+                    items.push({
+                        src: src,
+                        w: image.width || $em2.width,
+                        h: image.height || $em2.height,
+                        title: title
+                    })
+                })
+                var gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, {
+                    index: parseInt(i)
+                });
+                gallery.init()
+            }
+        })
+    }
+    viewer_init()
 </script>
+
+
+
+
+<script type="text/javascript" src="https://js.users.51.la/20544303.js"></script>
+
+    
+  </div>
 <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
         tex2jax: {
@@ -277,4 +426,5 @@ var sp = new Pager('data-pager-shell')
 </script>
 <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </body>
+
 </html>
