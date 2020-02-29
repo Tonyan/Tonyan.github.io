@@ -215,7 +215,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-02-29 14:28:42" itemprop="dateModified" datetime="2020-02-29T14:28:42+08:00">2020-02-29</time>
+                <time title="Modified: 2020-02-29 14:32:21" itemprop="dateModified" datetime="2020-02-29T14:32:21+08:00">2020-02-29</time>
               </span>
 
           <br>
@@ -246,10 +246,14 @@
           <h2 id="NLP简介"><a href="#NLP简介" class="headerlink" title="NLP简介"></a>NLP简介</h2><p>亲爱的观众朋友们，大家好，欢迎来到AI有趣电台。第一次和大家见面</p>
 <p>孤独的时候有人伴，让你的灵魂不孤单，听知识，学AI，让你的生活多姿多彩。</p>
 <p>第一期我们讲讲自然语言处理。<br>2017年AlphaGo的横空出世，让人工智能再次走进大家的视野，说到人工智能，这个概念比较广，依据个人粗浅的理解，人工智能在我们这个时代总共可以分为如下几个层面：</p>
-<p>正如狄更斯所说:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">这是一个最好的时代，这是一个最坏的时代；</span><br><span class="line">这是一个智慧的年代，这是一个愚蠢的年代；</span><br><span class="line">这是一个光明的季节，这是一个黑暗的季节；</span><br><span class="line">这是希望之春，这是失望之冬；</span><br><span class="line">人们面前应有尽有，人们面前一无所有；</span><br><span class="line">人们正踏上天堂之路，人们正走向地狱之门。</span><br></pre></td></tr></table></figure>
-<p>我们生在了最好的时代，因为我们见证了人工智能的第三次兴起，并且极有可能是这次浪潮的助推者，这是一个最坏的时代，是因为我们这一代人穷极一生也可能达不到人们理想中的AI时代。</p>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2018/08/14/“会话管理”/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -490,7 +494,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-02-29 14:28:45" itemprop="dateModified" datetime="2020-02-29T14:28:45+08:00">2020-02-29</time>
+                <time title="Modified: 2020-02-29 14:42:41" itemprop="dateModified" datetime="2020-02-29T14:42:41+08:00">2020-02-29</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -527,18 +531,18 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h3 id="A-Simple-Fast-Diverse-Decoding-Algorithm-for-Neural-Generation"><a href="#A-Simple-Fast-Diverse-Decoding-Algorithm-for-Neural-Generation" class="headerlink" title="A Simple, Fast Diverse Decoding Algorithm for Neural Generation"></a><a href="https://arxiv.org/abs/1611.08562" target="_blank" rel="noopener">A Simple, Fast Diverse Decoding Algorithm for Neural Generation</a></h3><h4 id="作者"><a href="#作者" class="headerlink" title="作者"></a>作者</h4><p>Jiwei Li, Will Monroe and Dan Jurafsky</p>
+          <h4 id="A-Simple-Fast-Diverse-Decoding-Algorithm-for-Neural-Generation"><a href="#A-Simple-Fast-Diverse-Decoding-Algorithm-for-Neural-Generation" class="headerlink" title="A Simple, Fast Diverse Decoding Algorithm for Neural Generation"></a><a href="https://arxiv.org/abs/1611.08562" target="_blank" rel="noopener">A Simple, Fast Diverse Decoding Algorithm for Neural Generation</a></h4><h4 id="作者"><a href="#作者" class="headerlink" title="作者"></a>作者</h4><p>Jiwei Li, Will Monroe and Dan Jurafsky</p>
 <h4 id="单位"><a href="#单位" class="headerlink" title="单位"></a>单位</h4><p>Stanford</p>
 <h4 id="关键词"><a href="#关键词" class="headerlink" title="关键词"></a>关键词</h4><p>seq2seq, diversity, RL</p>
 <h4 id="文章来源"><a href="#文章来源" class="headerlink" title="文章来源"></a>文章来源</h4><p>arXiv</p>
-<h4 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h4><p>seq2seq模型decoder时改进beam search，引入惩罚因子影响排序结果，并加入强化学习模型来自动学习diversity rate，使得解码出的结果更具多样性</p>
-<h4 id="模型"><a href="#模型" class="headerlink" title="模型"></a>模型</h4><p><img src="http://7xpodp.com1.z0.glb.clouddn.com/blog/20161215/223245715.png" alt=""><br>对比标准beam search，本模型引入惩罚因子，公式如下<br><img src="http://7xpodp.com1.z0.glb.clouddn.com/blog/20161216/153402399.png" alt=""><br>其中$\gamma$称为diversity rate，k’范围为[1,k]，K为beam size<br>强化学习模型中，策略为<br><img src="http://7xpodp.com1.z0.glb.clouddn.com/blog/20161216/153522629.png" alt=""><br>reward为评价指标，例如机器翻译中的BLEU值等</p>
-<h4 id="资源"><a href="#资源" class="headerlink" title="资源"></a>资源</h4><p>回复生成实验数据集：OpenSubtitles<br><a href="https://github.com/jiweil/mutual-information-for-neural-machine-translation" target="_blank" rel="noopener">代码模型可从作者另外一篇文章的源码稍加改动</a></p>
-<p>机器翻译数据集：<a href="http://www.statmt.org/wmt13/
-translation-task.html" target="_blank" rel="noopener">WMT’14</a></p>
-<h4 id="相关工作"><a href="#相关工作" class="headerlink" title="相关工作"></a>相关工作</h4><p><img src="http://7xpodp.com1.z0.glb.clouddn.com/blog/20161216/231134530.png" alt=""></p>
-<h4 id="简评-（必选）"><a href="#简评-（必选）" class="headerlink" title="简评 （必选）"></a>简评 （必选）</h4><p>本模型的创新点在于引入惩罚因子，使得decoder时对standard beam search算法进行重排序，并引入强化学习模型，自动学习diversity rate。作者分别在三个实验上进行验证，机器翻译、摘要抽取与对话回复生成，实验表明在不同的实验上有不同的表现，但是总体而言本方法能够在一定程度上解码出更具有多样性的句子。（思路简明清晰，对于传统的beam search稍加改动，原文中作者提到在Matlab代码中只改动一行即可）</p>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2016/12/20/A Simple,Fast Diverse Decoding Algorithm for Neural Generation_Tonya/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -771,7 +775,7 @@ translation-task.html" target="_blank" rel="noopener">WMT’14</a></p>
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-02-29 14:28:32" itemprop="dateModified" datetime="2020-02-29T14:28:32+08:00">2020-02-29</time>
+                <time title="Modified: 2020-02-29 14:32:22" itemprop="dateModified" datetime="2020-02-29T14:32:22+08:00">2020-02-29</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -811,17 +815,16 @@ translation-task.html" target="_blank" rel="noopener">WMT’14</a></p>
           <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;script type=&quot;text/javascript&quot; src=&quot;http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default&quot;&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure>
 <ol>
 <li>sublime texta安装markdown editing preview插件（ctrl+shift+p）输入install，在弹出窗口中输入需安装插件名称，回车即可，安装后ctrl+b运行即可在本地生成html文件预览。</li>
-<li><p>markdown文件头部填入以支持MathJax引擎（用图片解析或者接口方式发现速度太慢）</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;script type=&quot;text/javascript&quot; src=&quot;http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default&quot;&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>加入之后在本地发现可支持，但是用hexo部署至自己的博客系统不支持，发现有人实现了一个<a href="http://blog.csdn.net/xiahouzuoxin/article/details/26478179" target="_blank" rel="noopener">插件</a><br>安装 <code>npm install hexo-math --save</code></p>
-</li>
-<li>此处需要注意，不要在_config.yml中添加关于该插件的配置信息，因为它会自动生成</li>
-<li>我安装完之后运行依然没有实现公式效果，发现再安装一个插件即可解决<br><code>npm install hexo-renderer-mathjax --save</code></li>
-<li>以下为公式测试<br>行内公式：Simple inline $a = b + c$.<br>段间公式：<br>$$\frac{\partial u}{\partial t}<br>= h^2 \left( \frac{\partial^2 u}{\partial x^2} +<br>\frac{\partial^2 u}{\partial y^2} +<br>\frac{\partial^2 u}{\partial z^2}\right)$$<br>至此终于完美的解决了问题，好开心，哈哈</li>
-<li>还有个小技巧，Sublime Text安装LiveReload同时chrome浏览器也安装该插件，即可在运行<code>hexo -s</code>之后同步调试，可视化码字，简直不能再爽啦O(∩<em>∩)O~~</em>)解决完所有问题下面该专注内容本身啦，加油！！</li>
+<li>markdown文件头部填入以支持MathJax引擎（用图片解析或者接口方式发现速度太慢）</li>
 </ol>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2016/11/22/折腾博客支持latex公式/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -1059,7 +1062,7 @@ translation-task.html" target="_blank" rel="noopener">WMT’14</a></p>
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-02-29 14:28:54" itemprop="dateModified" datetime="2020-02-29T14:28:54+08:00">2020-02-29</time>
+                <time title="Modified: 2020-02-29 14:32:47" itemprop="dateModified" datetime="2020-02-29T14:32:47+08:00">2020-02-29</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -1099,8 +1102,6 @@ translation-task.html" target="_blank" rel="noopener">WMT’14</a></p>
           <h2 id="原文链接"><a href="#原文链接" class="headerlink" title="原文链接"></a><a href="https://arxiv.org/abs/1606.01541" target="_blank" rel="noopener">原文链接</a></h2><h2 id="作者"><a href="#作者" class="headerlink" title="作者"></a>作者</h2><p>Jiwei Li</p>
 <h2 id="单位"><a href="#单位" class="headerlink" title="单位"></a>单位</h2><p>斯坦福</p>
 <h2 id="关键词"><a href="#关键词" class="headerlink" title="关键词"></a>关键词</h2><p>Reinforcement Learning, seq2seq, text generation</p>
-<h2 id="文章来源"><a href="#文章来源" class="headerlink" title="文章来源"></a>文章来源</h2><p>arXiv.org(2016.06.25) &amp; EMNLP2016</p>
-<h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><p>本文提出利用强化学习进行开放领域的文本生成任务，并对比了有监督的seq2seq加attention模型和基于最大互信息的模型</p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2016/11/10/Deep Reinforcement Learning for Dialogue Generation/#more" rel="contents">

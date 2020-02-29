@@ -6,6 +6,7 @@
     <content><![CDATA[<h2 id="NLP简介"><a href="#NLP简介" class="headerlink" title="NLP简介"></a>NLP简介</h2><p>亲爱的观众朋友们，大家好，欢迎来到AI有趣电台。第一次和大家见面</p>
 <p>孤独的时候有人伴，让你的灵魂不孤单，听知识，学AI，让你的生活多姿多彩。</p>
 <p>第一期我们讲讲自然语言处理。<br>2017年AlphaGo的横空出世，让人工智能再次走进大家的视野，说到人工智能，这个概念比较广，依据个人粗浅的理解，人工智能在我们这个时代总共可以分为如下几个层面：</p>
+<a id="more"></a>
 <p>正如狄更斯所说:</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">这是一个最好的时代，这是一个最坏的时代；</span><br><span class="line">这是一个智慧的年代，这是一个愚蠢的年代；</span><br><span class="line">这是一个光明的季节，这是一个黑暗的季节；</span><br><span class="line">这是希望之春，这是失望之冬；</span><br><span class="line">人们面前应有尽有，人们面前一无所有；</span><br><span class="line">人们正踏上天堂之路，人们正走向地狱之门。</span><br></pre></td></tr></table></figure>
 <p>我们生在了最好的时代，因为我们见证了人工智能的第三次兴起，并且极有可能是这次浪潮的助推者，这是一个最坏的时代，是因为我们这一代人穷极一生也可能达不到人们理想中的AI时代。</p>
@@ -48,10 +49,11 @@
   <entry>
     <title>A Simple, Fast Diverse Decoding Algorithm for Neural Generation</title>
     <url>/2016/12/20/A%20Simple,Fast%20Diverse%20Decoding%20Algorithm%20for%20Neural%20Generation_Tonya/</url>
-    <content><![CDATA[<h3 id="A-Simple-Fast-Diverse-Decoding-Algorithm-for-Neural-Generation"><a href="#A-Simple-Fast-Diverse-Decoding-Algorithm-for-Neural-Generation" class="headerlink" title="A Simple, Fast Diverse Decoding Algorithm for Neural Generation"></a><a href="https://arxiv.org/abs/1611.08562" target="_blank" rel="noopener">A Simple, Fast Diverse Decoding Algorithm for Neural Generation</a></h3><h4 id="作者"><a href="#作者" class="headerlink" title="作者"></a>作者</h4><p>Jiwei Li, Will Monroe and Dan Jurafsky</p>
+    <content><![CDATA[<h4 id="A-Simple-Fast-Diverse-Decoding-Algorithm-for-Neural-Generation"><a href="#A-Simple-Fast-Diverse-Decoding-Algorithm-for-Neural-Generation" class="headerlink" title="A Simple, Fast Diverse Decoding Algorithm for Neural Generation"></a><a href="https://arxiv.org/abs/1611.08562" target="_blank" rel="noopener">A Simple, Fast Diverse Decoding Algorithm for Neural Generation</a></h4><h4 id="作者"><a href="#作者" class="headerlink" title="作者"></a>作者</h4><p>Jiwei Li, Will Monroe and Dan Jurafsky</p>
 <h4 id="单位"><a href="#单位" class="headerlink" title="单位"></a>单位</h4><p>Stanford</p>
 <h4 id="关键词"><a href="#关键词" class="headerlink" title="关键词"></a>关键词</h4><p>seq2seq, diversity, RL</p>
 <h4 id="文章来源"><a href="#文章来源" class="headerlink" title="文章来源"></a>文章来源</h4><p>arXiv</p>
+<a id="more"></a>
 <h4 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h4><p>seq2seq模型decoder时改进beam search，引入惩罚因子影响排序结果，并加入强化学习模型来自动学习diversity rate，使得解码出的结果更具多样性</p>
 <h4 id="模型"><a href="#模型" class="headerlink" title="模型"></a>模型</h4><p><img src="http://7xpodp.com1.z0.glb.clouddn.com/blog/20161215/223245715.png" alt=""><br>对比标准beam search，本模型引入惩罚因子，公式如下<br><img src="http://7xpodp.com1.z0.glb.clouddn.com/blog/20161216/153402399.png" alt=""><br>其中$\gamma$称为diversity rate，k’范围为[1,k]，K为beam size<br>强化学习模型中，策略为<br><img src="http://7xpodp.com1.z0.glb.clouddn.com/blog/20161216/153522629.png" alt=""><br>reward为评价指标，例如机器翻译中的BLEU值等</p>
 <h4 id="资源"><a href="#资源" class="headerlink" title="资源"></a>资源</h4><p>回复生成实验数据集：OpenSubtitles<br><a href="https://github.com/jiweil/mutual-information-for-neural-machine-translation" target="_blank" rel="noopener">代码模型可从作者另外一篇文章的源码稍加改动</a></p>
@@ -106,11 +108,12 @@ translation-task.html" target="_blank" rel="noopener">WMT’14</a></p>
     <content><![CDATA[<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;script type=&quot;text/javascript&quot; src=&quot;http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default&quot;&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure>
 <ol>
 <li>sublime texta安装markdown editing preview插件（ctrl+shift+p）输入install，在弹出窗口中输入需安装插件名称，回车即可，安装后ctrl+b运行即可在本地生成html文件预览。</li>
-<li><p>markdown文件头部填入以支持MathJax引擎（用图片解析或者接口方式发现速度太慢）</p>
+<li>markdown文件头部填入以支持MathJax引擎（用图片解析或者接口方式发现速度太慢）</li>
+</ol>
+<a id="more"></a>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;script type=&quot;text/javascript&quot; src=&quot;http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default&quot;&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>加入之后在本地发现可支持，但是用hexo部署至自己的博客系统不支持，发现有人实现了一个<a href="http://blog.csdn.net/xiahouzuoxin/article/details/26478179" target="_blank" rel="noopener">插件</a><br>安装 <code>npm install hexo-math --save</code></p>
-</li>
+<ol start="3">
+<li>加入之后在本地发现可支持，但是用hexo部署至自己的博客系统不支持，发现有人实现了一个<a href="http://blog.csdn.net/xiahouzuoxin/article/details/26478179" target="_blank" rel="noopener">插件</a><br>安装 <code>npm install hexo-math --save</code></li>
 <li>此处需要注意，不要在_config.yml中添加关于该插件的配置信息，因为它会自动生成</li>
 <li>我安装完之后运行依然没有实现公式效果，发现再安装一个插件即可解决<br><code>npm install hexo-renderer-mathjax --save</code></li>
 <li>以下为公式测试<br>行内公式：Simple inline $a = b + c$.<br>段间公式：<br>$$\frac{\partial u}{\partial t}<br>= h^2 \left( \frac{\partial^2 u}{\partial x^2} +<br>\frac{\partial^2 u}{\partial y^2} +<br>\frac{\partial^2 u}{\partial z^2}\right)$$<br>至此终于完美的解决了问题，好开心，哈哈</li>
@@ -170,9 +173,9 @@ translation-task.html" target="_blank" rel="noopener">WMT’14</a></p>
     <content><![CDATA[<h2 id="原文链接"><a href="#原文链接" class="headerlink" title="原文链接"></a><a href="https://arxiv.org/abs/1606.01541" target="_blank" rel="noopener">原文链接</a></h2><h2 id="作者"><a href="#作者" class="headerlink" title="作者"></a>作者</h2><p>Jiwei Li</p>
 <h2 id="单位"><a href="#单位" class="headerlink" title="单位"></a>单位</h2><p>斯坦福</p>
 <h2 id="关键词"><a href="#关键词" class="headerlink" title="关键词"></a>关键词</h2><p>Reinforcement Learning, seq2seq, text generation</p>
+<a id="more"></a>
 <h2 id="文章来源"><a href="#文章来源" class="headerlink" title="文章来源"></a>文章来源</h2><p>arXiv.org(2016.06.25) &amp; EMNLP2016</p>
 <h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><p>本文提出利用强化学习进行开放领域的文本生成任务，并对比了有监督的seq2seq加attention模型和基于最大互信息的模型</p>
-<a id="more"></a>
 <h2 id="模型"><a href="#模型" class="headerlink" title="模型"></a>模型</h2><p>强化学习中的reward</p>
 <p><img src="http://7xpodp.com1.z0.glb.clouddn.com/blog/20161123/231524231.png" alt=""></p>
 <p>易被响应（Ease of answering），不容易出现对话僵局，其中 S 是无意义回答合集，s是某一时刻的响应</p>
