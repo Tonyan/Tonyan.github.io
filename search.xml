@@ -48,17 +48,17 @@
   <entry>
     <title>A Simple, Fast Diverse Decoding Algorithm for Neural Generation</title>
     <url>/2016/12/20/A%20Simple,Fast%20Diverse%20Decoding%20Algorithm%20for%20Neural%20Generation_Tonya/</url>
-    <content><![CDATA[<h1 id="A-Simple-Fast-Diverse-Decoding-Algorithm-for-Neural-Generation"><a href="#A-Simple-Fast-Diverse-Decoding-Algorithm-for-Neural-Generation" class="headerlink" title="A Simple, Fast Diverse Decoding Algorithm for Neural Generation"></a><a href="https://arxiv.org/abs/1611.08562" target="_blank" rel="noopener">A Simple, Fast Diverse Decoding Algorithm for Neural Generation</a></h1><h2 id="作者"><a href="#作者" class="headerlink" title="作者"></a>作者</h2><p>Jiwei Li, Will Monroe and Dan Jurafsky</p>
-<h2 id="单位"><a href="#单位" class="headerlink" title="单位"></a>单位</h2><p>Stanford</p>
-<h2 id="关键词"><a href="#关键词" class="headerlink" title="关键词"></a>关键词</h2><p>seq2seq, diversity, RL</p>
-<h2 id="文章来源"><a href="#文章来源" class="headerlink" title="文章来源"></a>文章来源</h2><p>arXiv</p>
-<h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><p>seq2seq模型decoder时改进beam search，引入惩罚因子影响排序结果，并加入强化学习模型来自动学习diversity rate，使得解码出的结果更具多样性</p>
-<h2 id="模型"><a href="#模型" class="headerlink" title="模型"></a>模型</h2><p><img src="http://7xpodp.com1.z0.glb.clouddn.com/blog/20161215/223245715.png" alt=""><br>对比标准beam search，本模型引入惩罚因子，公式如下<br><img src="http://7xpodp.com1.z0.glb.clouddn.com/blog/20161216/153402399.png" alt=""><br>其中$\gamma$称为diversity rate，k’范围为[1,k]，K为beam size<br>强化学习模型中，策略为<br><img src="http://7xpodp.com1.z0.glb.clouddn.com/blog/20161216/153522629.png" alt=""><br>reward为评价指标，例如机器翻译中的BLEU值等</p>
-<h2 id="资源"><a href="#资源" class="headerlink" title="资源"></a>资源</h2><p>回复生成实验数据集：OpenSubtitles<br><a href="https://github.com/jiweil/mutual-information-for-neural-machine-translation" target="_blank" rel="noopener">代码模型可从作者另外一篇文章的源码稍加改动</a></p>
+    <content><![CDATA[<h3 id="A-Simple-Fast-Diverse-Decoding-Algorithm-for-Neural-Generation"><a href="#A-Simple-Fast-Diverse-Decoding-Algorithm-for-Neural-Generation" class="headerlink" title="A Simple, Fast Diverse Decoding Algorithm for Neural Generation"></a><a href="https://arxiv.org/abs/1611.08562" target="_blank" rel="noopener">A Simple, Fast Diverse Decoding Algorithm for Neural Generation</a></h3><h4 id="作者"><a href="#作者" class="headerlink" title="作者"></a>作者</h4><p>Jiwei Li, Will Monroe and Dan Jurafsky</p>
+<h4 id="单位"><a href="#单位" class="headerlink" title="单位"></a>单位</h4><p>Stanford</p>
+<h4 id="关键词"><a href="#关键词" class="headerlink" title="关键词"></a>关键词</h4><p>seq2seq, diversity, RL</p>
+<h4 id="文章来源"><a href="#文章来源" class="headerlink" title="文章来源"></a>文章来源</h4><p>arXiv</p>
+<h4 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h4><p>seq2seq模型decoder时改进beam search，引入惩罚因子影响排序结果，并加入强化学习模型来自动学习diversity rate，使得解码出的结果更具多样性</p>
+<h4 id="模型"><a href="#模型" class="headerlink" title="模型"></a>模型</h4><p><img src="http://7xpodp.com1.z0.glb.clouddn.com/blog/20161215/223245715.png" alt=""><br>对比标准beam search，本模型引入惩罚因子，公式如下<br><img src="http://7xpodp.com1.z0.glb.clouddn.com/blog/20161216/153402399.png" alt=""><br>其中$\gamma$称为diversity rate，k’范围为[1,k]，K为beam size<br>强化学习模型中，策略为<br><img src="http://7xpodp.com1.z0.glb.clouddn.com/blog/20161216/153522629.png" alt=""><br>reward为评价指标，例如机器翻译中的BLEU值等</p>
+<h4 id="资源"><a href="#资源" class="headerlink" title="资源"></a>资源</h4><p>回复生成实验数据集：OpenSubtitles<br><a href="https://github.com/jiweil/mutual-information-for-neural-machine-translation" target="_blank" rel="noopener">代码模型可从作者另外一篇文章的源码稍加改动</a></p>
 <p>机器翻译数据集：<a href="http://www.statmt.org/wmt13/
 translation-task.html" target="_blank" rel="noopener">WMT’14</a></p>
-<h2 id="相关工作"><a href="#相关工作" class="headerlink" title="相关工作"></a>相关工作</h2><p><img src="http://7xpodp.com1.z0.glb.clouddn.com/blog/20161216/231134530.png" alt=""></p>
-<h2 id="简评-（必选）"><a href="#简评-（必选）" class="headerlink" title="简评 （必选）"></a>简评 （必选）</h2><p>本模型的创新点在于引入惩罚因子，使得decoder时对standard beam search算法进行重排序，并引入强化学习模型，自动学习diversity rate。作者分别在三个实验上进行验证，机器翻译、摘要抽取与对话回复生成，实验表明在不同的实验上有不同的表现，但是总体而言本方法能够在一定程度上解码出更具有多样性的句子。（思路简明清晰，对于传统的beam search稍加改动，原文中作者提到在Matlab代码中只改动一行即可）</p>
+<h4 id="相关工作"><a href="#相关工作" class="headerlink" title="相关工作"></a>相关工作</h4><p><img src="http://7xpodp.com1.z0.glb.clouddn.com/blog/20161216/231134530.png" alt=""></p>
+<h4 id="简评-（必选）"><a href="#简评-（必选）" class="headerlink" title="简评 （必选）"></a>简评 （必选）</h4><p>本模型的创新点在于引入惩罚因子，使得decoder时对standard beam search算法进行重排序，并引入强化学习模型，自动学习diversity rate。作者分别在三个实验上进行验证，机器翻译、摘要抽取与对话回复生成，实验表明在不同的实验上有不同的表现，但是总体而言本方法能够在一定程度上解码出更具有多样性的句子。（思路简明清晰，对于传统的beam search稍加改动，原文中作者提到在Matlab代码中只改动一行即可）</p>
 ]]></content>
       <categories>
         <category>论文</category>
@@ -147,6 +147,24 @@ translation-task.html" target="_blank" rel="noopener">WMT’14</a></p>
       </tags>
   </entry>
   <entry>
+    <title>论文速读《Two are Better than One An Ensemble of Retrieval and Generation-Based Dialog》</title>
+    <url>/2016/11/10/Two%20are%20%20Better%20than%20One%20An%20Ensemble%20of%20Retrieval%20and%20Generation-Based%20Dialog/</url>
+    <content><![CDATA[<h2 id="作者"><a href="#作者" class="headerlink" title="作者"></a>作者</h2><p>Yiping Song, Rui Yan, Xiang Li, Dongyan Zhao, Ming Zhang</p>
+<h2 id="单位"><a href="#单位" class="headerlink" title="单位"></a>单位</h2><p>北京大学</p>
+<h2 id="关键词"><a href="#关键词" class="headerlink" title="关键词"></a>关键词</h2><p>对话系统、open domain、chatbot</p>
+<h2 id="文章来源"><a href="#文章来源" class="headerlink" title="文章来源"></a>文章来源</h2><p>arXiv</p>
+<a id="more"></a>
+<h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><p>对话系统中可将问题和检索的结果同时作为输入Encoder之后进行解码Decoder，再将生成的结果和原检索结果重排序</p>
+<h2 id="模型"><a href="#模型" class="headerlink" title="模型"></a>模型</h2><p><img src="http://7xpodp.com1.z0.glb.clouddn.com/blog/20161123/233005658.png" alt=""><br><img src="http://7xpodp.com1.z0.glb.clouddn.com/blog/20161123/233024296.png" alt=""></p>
+<h2 id="相关工作"><a href="#相关工作" class="headerlink" title="相关工作"></a>相关工作</h2><p><img src="http://7xpodp.com1.z0.glb.clouddn.com/blog/20161123/233041282.png" alt=""><br><img src="http://7xpodp.com1.z0.glb.clouddn.com/blog/20161123/233053949.png" alt=""></p>
+<h2 id="简评"><a href="#简评" class="headerlink" title="简评"></a>简评</h2><p>作者的思路非常简单，原来的回复生成模型容易发生回复内容短或者回复信息无意义的问题，在此作者将候选结果和原来的问句同时作为RNN生成器的输入，生成结果后再将本次生成的结果加入原检索候选集中，进行重新排序，实验结果证明此种方法比单独使用检索或单独使用生成效果有大幅提升。</p>
+]]></content>
+      <tags>
+        <tag>RL</tag>
+        <tag>NLG</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>论文速读《Deep Reinforcement Learning for Dialogue Generation》</title>
     <url>/2016/11/10/Deep%20Reinforcement%20Learning%20for%20Dialogue%20Generation/</url>
     <content><![CDATA[<h2 id="原文链接"><a href="#原文链接" class="headerlink" title="原文链接"></a><a href="https://arxiv.org/abs/1606.01541" target="_blank" rel="noopener">原文链接</a></h2><h2 id="作者"><a href="#作者" class="headerlink" title="作者"></a>作者</h2><p>Jiwei Li</p>
@@ -178,23 +196,6 @@ translation-task.html" target="_blank" rel="noopener">WMT’14</a></p>
         <tag>NLP</tag>
         <tag>RL</tag>
         <tag>chatbot</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>论文速读《Two are Better than One An Ensemble of Retrieval and Generation-Based Dialog》</title>
-    <url>/2016/11/10/Two%20are%20%20Better%20than%20One%20An%20Ensemble%20of%20Retrieval%20and%20Generation-Based%20Dialog/</url>
-    <content><![CDATA[<h2 id="作者"><a href="#作者" class="headerlink" title="作者"></a>作者</h2><p>Yiping Song, Rui Yan, Xiang Li, Dongyan Zhao, Ming Zhang</p>
-<h2 id="单位"><a href="#单位" class="headerlink" title="单位"></a>单位</h2><p>北京大学</p>
-<h2 id="关键词"><a href="#关键词" class="headerlink" title="关键词"></a>关键词</h2><p>对话系统、open domain、chatbot</p>
-<h2 id="文章来源"><a href="#文章来源" class="headerlink" title="文章来源"></a>文章来源</h2><p>arXiv</p>
-<h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><p>对话系统中可将问题和检索的结果同时作为输入Encoder之后进行解码Decoder，再将生成的结果和原检索结果重排序</p>
-<h2 id="模型"><a href="#模型" class="headerlink" title="模型"></a>模型</h2><p><img src="http://7xpodp.com1.z0.glb.clouddn.com/blog/20161123/233005658.png" alt=""><br><img src="http://7xpodp.com1.z0.glb.clouddn.com/blog/20161123/233024296.png" alt=""></p>
-<h2 id="相关工作"><a href="#相关工作" class="headerlink" title="相关工作"></a>相关工作</h2><p><img src="http://7xpodp.com1.z0.glb.clouddn.com/blog/20161123/233041282.png" alt=""><br><img src="http://7xpodp.com1.z0.glb.clouddn.com/blog/20161123/233053949.png" alt=""></p>
-<h2 id="简评"><a href="#简评" class="headerlink" title="简评"></a>简评</h2><p>作者的思路非常简单，原来的回复生成模型容易发生回复内容短或者回复信息无意义的问题，在此作者将候选结果和原来的问句同时作为RNN生成器的输入，生成结果后再将本次生成的结果加入原检索候选集中，进行重新排序，实验结果证明此种方法比单独使用检索或单独使用生成效果有大幅提升。</p>
-]]></content>
-      <tags>
-        <tag>RL</tag>
-        <tag>NLG</tag>
       </tags>
   </entry>
   <entry>
