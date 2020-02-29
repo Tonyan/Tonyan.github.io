@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>“会话管理”</title>
+    <url>/2018/08/14/%E2%80%9C%E4%BC%9A%E8%AF%9D%E7%AE%A1%E7%90%86%E2%80%9D/</url>
+    <content><![CDATA[<h2 id="NLP简介"><a href="#NLP简介" class="headerlink" title="NLP简介"></a>NLP简介</h2><p>亲爱的观众朋友们，大家好，欢迎来到AI有趣电台。第一次和大家见面</p>
+<p>孤独的时候有人伴，让你的灵魂不孤单，听知识，学AI，让你的生活多姿多彩。</p>
+<p>第一期我们讲讲自然语言处理。<br>2017年AlphaGo的横空出世，让人工智能再次走进大家的视野，说到人工智能，这个概念比较广，依据个人粗浅的理解，人工智能在我们这个时代总共可以分为如下几个层面：</p>
+<p>正如狄更斯所说:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">这是一个最好的时代，这是一个最坏的时代；</span><br><span class="line">这是一个智慧的年代，这是一个愚蠢的年代；</span><br><span class="line">这是一个光明的季节，这是一个黑暗的季节；</span><br><span class="line">这是希望之春，这是失望之冬；</span><br><span class="line">人们面前应有尽有，人们面前一无所有；</span><br><span class="line">人们正踏上天堂之路，人们正走向地狱之门。</span><br></pre></td></tr></table></figure>
+<p>我们生在了最好的时代，因为我们见证了人工智能的第三次兴起，并且极有可能是这次浪潮的助推者，这是一个最坏的时代，是因为我们这一代人穷极一生也可能达不到人们理想中的AI时代。</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>numpy 安装学习</title>
+    <url>/2017/06/20/numpy%E5%AE%89%E8%A3%85%E5%AD%A6%E4%B9%A0/</url>
+    <content><![CDATA[<p>首先安装easy_install</p>
+<p>下载地址:<a href="https://pypi.python.org/pypi/ez_setup" target="_blank" rel="noopener">https://pypi.python.org/pypi/ez_setup</a></p>
+<p>解压,安装方法cmd进入到对应目录下，执行命令：python ez_setup.py</p>
+<p>安装好easy_install 之后 再安装pip</p>
+<p>下载地址:<a href="https://pypi.python.org/pypi/pip" target="_blank" rel="noopener">https://pypi.python.org/pypi/pip</a></p>
+<p>解压,安装命令：python setup.py install</p>
+<p>安装完成后可能出现系统找不到命令的问题，将python27/Scripts 加入系统环境变量即可</p>
+<p>使用pip安装numpy ：pip install numpy</p>
+]]></content>
+      <categories>
+        <category>求知</category>
+      </categories>
+      <tags>
+        <tag>机器学习</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>论文速读《Learning to Generate Reviews and Discovering Sentiment》</title>
+    <url>/2017/04/24/Learning%20to%20Generate%20Reviews%20and%20Discovering%20Sentiment/</url>
+    <content><![CDATA[<h2 id="链接"><a href="#链接" class="headerlink" title="链接"></a><a href="https://arxiv.org/abs/1704.01444" target="_blank" rel="noopener">链接</a></h2><p>##摘要<br>我们提出了一种byte-level的RNN language model。当给出足够的空间、训练数据、计算时间，通过该模型的表示包括disentangled features（不依赖特征？）和高水平的概念一致？<br>特别地，我们发现了一个单独的情感分析单元。这些表示学习了一个无监督的方式，并在斯坦福情感分析树图资料库SST的二元分类上取得了最好的结果。而且该模型数据有效？只用一部分的标注数据和在所有数据上取得的baseline相当。我们也证明了该情感单元对于模型的生成结果有直接影响。简单的修改他的值为积极或者消极生成的样例即为积极或者消极的情感。</p>
+<p>##简介和动机<br>表示学习在目前机器学习系统中扮演者关键的角色。表示将原始数据映射成更实用的形式，并且表示学习的选择对于任何应用都是至关重要的成分。更一般的说，有两个领域的研究强调如何学习有用表示的不同细节。<br>有标注的大规模语料高维度的监督学习训练是非常非常重要的</p>
+<a id="more"></a>
+]]></content>
+      <categories>
+        <category>论文</category>
+      </categories>
+      <tags>
+        <tag>sentiment</tag>
+        <tag>genetate</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>A Simple, Fast Diverse Decoding Algorithm for Neural Generation</title>
+    <url>/2016/12/20/A%20Simple,Fast%20Diverse%20Decoding%20Algorithm%20for%20Neural%20Generation_Tonya/</url>
+    <content><![CDATA[<h1 id="A-Simple-Fast-Diverse-Decoding-Algorithm-for-Neural-Generation"><a href="#A-Simple-Fast-Diverse-Decoding-Algorithm-for-Neural-Generation" class="headerlink" title="A Simple, Fast Diverse Decoding Algorithm for Neural Generation"></a><a href="https://arxiv.org/abs/1611.08562" target="_blank" rel="noopener">A Simple, Fast Diverse Decoding Algorithm for Neural Generation</a></h1><h2 id="作者"><a href="#作者" class="headerlink" title="作者"></a>作者</h2><p>Jiwei Li, Will Monroe and Dan Jurafsky</p>
+<h2 id="单位"><a href="#单位" class="headerlink" title="单位"></a>单位</h2><p>Stanford</p>
+<h2 id="关键词"><a href="#关键词" class="headerlink" title="关键词"></a>关键词</h2><p>seq2seq, diversity, RL</p>
+<h2 id="文章来源"><a href="#文章来源" class="headerlink" title="文章来源"></a>文章来源</h2><p>arXiv</p>
+<h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><p>seq2seq模型decoder时改进beam search，引入惩罚因子影响排序结果，并加入强化学习模型来自动学习diversity rate，使得解码出的结果更具多样性</p>
+<h2 id="模型"><a href="#模型" class="headerlink" title="模型"></a>模型</h2><p><img src="http://7xpodp.com1.z0.glb.clouddn.com/blog/20161215/223245715.png" alt=""><br>对比标准beam search，本模型引入惩罚因子，公式如下<br><img src="http://7xpodp.com1.z0.glb.clouddn.com/blog/20161216/153402399.png" alt=""><br>其中$\gamma$称为diversity rate，k’范围为[1,k]，K为beam size<br>强化学习模型中，策略为<br><img src="http://7xpodp.com1.z0.glb.clouddn.com/blog/20161216/153522629.png" alt=""><br>reward为评价指标，例如机器翻译中的BLEU值等</p>
+<h2 id="资源"><a href="#资源" class="headerlink" title="资源"></a>资源</h2><p>回复生成实验数据集：OpenSubtitles<br><a href="https://github.com/jiweil/mutual-information-for-neural-machine-translation" target="_blank" rel="noopener">代码模型可从作者另外一篇文章的源码稍加改动</a></p>
+<p>机器翻译数据集：<a href="http://www.statmt.org/wmt13/
+translation-task.html" target="_blank" rel="noopener">WMT’14</a></p>
+<h2 id="相关工作"><a href="#相关工作" class="headerlink" title="相关工作"></a>相关工作</h2><p><img src="http://7xpodp.com1.z0.glb.clouddn.com/blog/20161216/231134530.png" alt=""></p>
+<h2 id="简评-（必选）"><a href="#简评-（必选）" class="headerlink" title="简评 （必选）"></a>简评 （必选）</h2><p>本模型的创新点在于引入惩罚因子，使得decoder时对standard beam search算法进行重排序，并引入强化学习模型，自动学习diversity rate。作者分别在三个实验上进行验证，机器翻译、摘要抽取与对话回复生成，实验表明在不同的实验上有不同的表现，但是总体而言本方法能够在一定程度上解码出更具有多样性的句子。（思路简明清晰，对于传统的beam search稍加改动，原文中作者提到在Matlab代码中只改动一行即可）</p>
+]]></content>
+      <categories>
+        <category>论文</category>
+      </categories>
+      <tags>
+        <tag>NLP</tag>
+        <tag>RL</tag>
+        <tag>chatbot</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>github page博客不同电脑管理</title>
+    <url>/2016/11/25/GithubPage%E4%B8%8D%E5%90%8C%E7%94%B5%E8%84%91%E7%AE%A1%E7%90%86/</url>
+    <content><![CDATA[<p>目前本地已有github page所有文件，想直接建立两个分支分别存储源文件和生成好的博客<br>发现直接git新建分支不好用，此时在git中切换至存放博客的主目录执行,目的在于将当前文件初始化为git可管理文件<br><code>git init</code><br>由于刚刚初始化为git目录，现在识别不出master分支，会报错“fatal: Not a valid object name: ‘master’”<br>-解决该问题需要提交一次才可以，即<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git add.</span><br><span class="line">git commit -m &quot;commit&quot;</span><br></pre></td></tr></table></figure></p>
+<a id="more"></a>
+<p>但是执行完发现报错“untracked files, nothing added to commit but untracked files present” 这是因为刚刚提交的文件只是暂存状态，并未真正提交，于是想了个迂回的办法，先提交一个小文件，直接<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git add filename</span><br><span class="line">git commit -m &quot;commit&quot;</span><br></pre></td></tr></table></figure></p>
+<p>之后再执行创建分支命令即可<br><code>git branch hexo</code><br>现在我们有两个分支master和hexo，我们要将hexo设置为默认分支，首先切换分支至hexo<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git checkout hexo</span><br><span class="line">git add dir #注意首次提交新文件夹时输入文件目录名称</span><br><span class="line">git add filename</span><br><span class="line">git push origin hexo</span><br></pre></td></tr></table></figure></p>
+<p>此时又报错”fatal: ‘origin’ does not appear to be a git repository”<br>这是因为在最初并为连到远程项目地址<br><code>git remote add origin git@github.com:username/proname.git</code><br>第一次我的远程地址输错了，再次报错“fatal: remote origin already exists.”<br>此时需要将原来的remote删除，再次执行<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git remote rm origin</span><br><span class="line">git remote add origin git@github.com:username/proname.git #此处我的地址为coding地址</span><br><span class="line">git push origin hexo</span><br></pre></td></tr></table></figure></p>
+<p>执行完毕就将我的hexo博客源文件上传至coding.net来保存<br>更新静态博客内容，也是在hexo分支下，执行<br><code>hexo d -g</code><br>若提交时遇到错误” Warning: Your console font probably doesn‘t support Unicode. If you experience trange characters in the output, consider switching to a TrueType font such as ucida Console!”<br>导致无法提交，通常这是因为文件中含有中文，解决办法如下：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git config [--global] core.quotepath off</span><br><span class="line">git config [--global] --unset i18n.logoutputencoding</span><br><span class="line">git config [--global] --unset i18n.commitencoding</span><br></pre></td></tr></table></figure></p>
+<p>我试验完问题依然存在，再次尝试<br><code>git config --global core.autocrlf true</code><br>无果，于是将cmd默认字体换为宋体，不再报这个错误，但是某些文件依然没有上传，此时执行<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">find ./ -name &quot;*.gitignore&quot;</span><br><span class="line">find ./ -name &quot;*.gitignore&quot; | xargs rm</span><br><span class="line">git status</span><br></pre></td></tr></table></figure></p>
+<p>找到遗漏的文件，删除，并重新上传，或者<br><code>git rm --cached</code><br>清除掉远程目录，再重新上传。</p>
+]]></content>
+      <categories>
+        <category>配置</category>
+      </categories>
+      <tags>
+        <tag>技术</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>tensorflow-HPC配置方法</title>
+    <url>/2016/11/22/tensorflow-HPC%E9%85%8D%E7%BD%AE%E6%96%B9%E6%B3%95/</url>
+    <content><![CDATA[<p>师弟写的，拿来备份<br>（目前是在gpu05上安装的gpu版本的tensorflow，测试其他gpu貌似不能一样用）<br>1.去github上下载0.9版本的tensorflow的gpu-linux版本的.whl文件，上传到HPC<br>2.下载pip2.7（如果有就不用装了），用pip2.7 install –upgrade –user <strong><em>.whl安装到用户目录下（</em></strong>.whl为第一步下的文件）<br>3.vim进入当前用户的.bash_profile文件，增加如下两行：<br>LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/cuda-7.5/lib64<br>export LD_LIBRARY_PATH<br>4.wq保存退出<br>5.退出HPC，重新连接进入gpu05，进入python命令行，import tensorflow测试一下，成功输出五个sucessfully则成功<br>（6.为确保在screen里也能正常使用tensorflow的用户配置，在用户目录下新建.screenrc文件,并在里面添加shell -$SHELL，保存退出即可，详情参照<br><a href="http://blog.csdn.net/yasaken/article/details/7418583）" target="_blank" rel="noopener">http://blog.csdn.net/yasaken/article/details/7418583）</a></p>
+]]></content>
+      <categories>
+        <category>技术</category>
+      </categories>
+      <tags>
+        <tag>技术</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hexo Latex公式支持</title>
+    <url>/2016/11/22/%E6%8A%98%E8%85%BE%E5%8D%9A%E5%AE%A2%E6%94%AF%E6%8C%81latex%E5%85%AC%E5%BC%8F/</url>
+    <content><![CDATA[<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;script type=&quot;text/javascript&quot; src=&quot;http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default&quot;&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<ol>
+<li>sublime texta安装markdown editing preview插件（ctrl+shift+p）输入install，在弹出窗口中输入需安装插件名称，回车即可，安装后ctrl+b运行即可在本地生成html文件预览。</li>
+<li><p>markdown文件头部填入以支持MathJax引擎（用图片解析或者接口方式发现速度太慢）</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;script type=&quot;text/javascript&quot; src=&quot;http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default&quot;&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>加入之后在本地发现可支持，但是用hexo部署至自己的博客系统不支持，发现有人实现了一个<a href="http://blog.csdn.net/xiahouzuoxin/article/details/26478179" target="_blank" rel="noopener">插件</a><br>安装 <code>npm install hexo-math --save</code></p>
+</li>
+<li>此处需要注意，不要在_config.yml中添加关于该插件的配置信息，因为它会自动生成</li>
+<li>我安装完之后运行依然没有实现公式效果，发现再安装一个插件即可解决<br><code>npm install hexo-renderer-mathjax --save</code></li>
+<li>以下为公式测试<br>行内公式：Simple inline $a = b + c$.<br>段间公式：<br>$$\frac{\partial u}{\partial t}<br>= h^2 \left( \frac{\partial^2 u}{\partial x^2} +<br>\frac{\partial^2 u}{\partial y^2} +<br>\frac{\partial^2 u}{\partial z^2}\right)$$<br>至此终于完美的解决了问题，好开心，哈哈</li>
+<li>还有个小技巧，Sublime Text安装LiveReload同时chrome浏览器也安装该插件，即可在运行<code>hexo -s</code>之后同步调试，可视化码字，简直不能再爽啦O(∩<em>∩)O~~</em>)解决完所有问题下面该专注内容本身啦，加油！！</li>
+</ol>
+]]></content>
+      <categories>
+        <category>配置</category>
+      </categories>
+      <tags>
+        <tag>技术</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>论文速读《Learning to compose words into sentences with reinforcement learning》</title>
+    <url>/2016/11/14/Learning%20to%20compose%20words%20into%20sentences%20with%20reinforcement%20learning_Tonya/</url>
+    <content><![CDATA[<h2 id="链接"><a href="#链接" class="headerlink" title="链接"></a><a href="https://openreview.net/forum?id=Skvgqgqxe" target="_blank" rel="noopener">链接</a></h2><h2 id="作者"><a href="#作者" class="headerlink" title="作者"></a>作者</h2><p>Dani Yogatama, Phil Blunsom, Chris Dyer, Edward Grefenstette, Wang Ling</p>
+<h2 id="单位"><a href="#单位" class="headerlink" title="单位"></a>单位</h2><p>google</p>
+<h2 id="关键词"><a href="#关键词" class="headerlink" title="关键词"></a>关键词</h2><p>Tree-LSTM, Reinforcement Learning</p>
+<h2 id="文章来源"><a href="#文章来源" class="headerlink" title="文章来源"></a>文章来源</h2><p>ICLR 2017</p>
+<h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><p>使用强化学习来构建树结构的神经网络Tree-LSTM，学习自然语言的句子表示</p>
+<a id="more"></a>
+<h2 id="模型"><a href="#模型" class="headerlink" title="模型"></a>模型</h2><p>模型分为两部分：Tree-LSTM和强化学习模型<br>应用Tree-LSTM(可以通过LSTM的忘记门机制，跳过整棵对结果影响不大的子树)，并结合{SHIFT，REDUCE}操作，SHIFT操作对应将一个节点压入栈，REDUCE对应将两个元素组合，从而建立树结构</p>
+<p>强化学习用来寻找最佳的节点组合情况，RL模型中的状态s即当前构建的树结构，a为{SHIFT，REDUCE}操作，reward对应不同downstream<br> task(例：若是用该句子表示进行分类任务，则r对应从策略网络中采样得到句子表示的分类准确性的概率)</p>
+<h2 id="资源"><a href="#资源" class="headerlink" title="资源"></a>资源</h2><p>作者将该工作进行了四组实验，情感分类，语义相关性判断，自然语言推理，句子生成<br>分别应用Stanford Sentiment Treebank，Sentences Involving Compositional Knowledge corpus，Stanford Natural Language Inference corpus，IMDB movie review corpus</p>
+<h2 id="相关工作"><a href="#相关工作" class="headerlink" title="相关工作"></a>相关工作</h2><p>与Socher等人之前提出的Recursive NN,MV-RNN,RNTN，Tree-LSTM等工作一脉相承，本文又加入了RL方式构建树形结构</p>
+<h2 id="简评"><a href="#简评" class="headerlink" title="简评"></a>简评</h2><p>将强化学习引入句子表示学习之中，学习构建树的不同方式，从左向右，从右向左，双向，有监督、半监督、预先无结构等方式去构建树结构，但是训练时间较长，在几个任务上效果提升不是特别明显</p>
+]]></content>
+      <categories>
+        <category>论文</category>
+      </categories>
+      <tags>
+        <tag>RL</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>论文速读《Deep Reinforcement Learning for Dialogue Generation》</title>
+    <url>/2016/11/10/Deep%20Reinforcement%20Learning%20for%20Dialogue%20Generation/</url>
+    <content><![CDATA[<h2 id="原文链接"><a href="#原文链接" class="headerlink" title="原文链接"></a><a href="https://arxiv.org/abs/1606.01541" target="_blank" rel="noopener">原文链接</a></h2><h2 id="作者"><a href="#作者" class="headerlink" title="作者"></a>作者</h2><p>Jiwei Li</p>
+<h2 id="单位"><a href="#单位" class="headerlink" title="单位"></a>单位</h2><p>斯坦福</p>
+<h2 id="关键词"><a href="#关键词" class="headerlink" title="关键词"></a>关键词</h2><p>Reinforcement Learning, seq2seq, text generation</p>
+<h2 id="文章来源"><a href="#文章来源" class="headerlink" title="文章来源"></a>文章来源</h2><p>arXiv.org(2016.06.25) &amp; EMNLP2016</p>
+<h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><p>本文提出利用强化学习进行开放领域的文本生成任务，并对比了有监督的seq2seq加attention模型和基于最大互信息的模型</p>
+<a id="more"></a>
+<h2 id="模型"><a href="#模型" class="headerlink" title="模型"></a>模型</h2><p>强化学习中的reward</p>
+<p><img src="http://7xpodp.com1.z0.glb.clouddn.com/blog/20161123/231524231.png" alt=""></p>
+<p>易被响应（Ease of answering），不容易出现对话僵局，其中 S 是无意义回答合集，s是某一时刻的响应</p>
+<p><img src="http://7xpodp.com1.z0.glb.clouddn.com/blog/20161123/231624954.png" alt=""></p>
+<p>信息流，若开辟新的话题，有利于对话的继续发展，隐层表示 hpi 和 hpi+1 的夹角余弦</p>
+<p><img src="http://7xpodp.com1.z0.glb.clouddn.com/blog/20161123/231655514.png" alt=""></p>
+<p>语义连贯性，减少与对话无关问题的影响，其中，pseq2seq(a|pi,qi) 是由上一轮状态得到响应的概率，后一项是由当前产生响应通过网络生成之前的 qi 的概率。</p>
+<p>最终的reward是对三者加权求和，系数分别为：0.25、0.25、0.5<br><img src="http://7xpodp.com1.z0.glb.clouddn.com/blog/20161123/231723685.png" alt=""><br>对比试验：</p>
+<ol>
+<li>对话初始状态为一个SEQ2SEQ加attention的模型作为强化学习的初始状态</li>
+<li>在1的基础上将最大互信息加入其中作为reward，对于一个给定的输入[pi,qi]，可以根据模型生成一个候选回答集合A。对于A中的每一个回答a,从预训练模型中得到的概率分布上可以计算出互信息的值 m(a,[pi,qi])。</li>
+<li>将互信息训练过的模型作为初始模型，用策略梯度更新参数并加入课程学习策略，最终最多限定五轮对话</li>
+</ol>
+<h2 id="相关工作"><a href="#相关工作" class="headerlink" title="相关工作"></a>相关工作</h2><p><img src="http://7xpodp.com1.z0.glb.clouddn.com/DQN_related.png" alt="DQN相关"></p>
+<h2 id="简评"><a href="#简评" class="headerlink" title="简评"></a>简评</h2><p>本文的思想其实非常符合写作的一种情况，就像贾岛推敲的故事，回想小时候刚学习写句子时，也不能一次写好，总会不断对一些词语进行修改。Google DeepMind的文章《DRAW：A Recurrent Neural Network For Image》也和本文异曲同工：画画也不是一次画好，也要不断的完善。不同之处在于本文率先引入DQN做文本生成。在机器学习各个分支下，强化学习和人类与环境的交互方式非常相似，在许多领域开始初露头角，期待看到更多将强化学习结合语言模型的应用。</p>
+]]></content>
+      <categories>
+        <category>论文</category>
+      </categories>
+      <tags>
+        <tag>NLP</tag>
+        <tag>RL</tag>
+        <tag>chatbot</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>论文速读《Two are Better than One An Ensemble of Retrieval and Generation-Based Dialog》</title>
+    <url>/2016/11/10/Two%20are%20%20Better%20than%20One%20An%20Ensemble%20of%20Retrieval%20and%20Generation-Based%20Dialog/</url>
+    <content><![CDATA[<h2 id="作者"><a href="#作者" class="headerlink" title="作者"></a>作者</h2><p>Yiping Song, Rui Yan, Xiang Li, Dongyan Zhao, Ming Zhang</p>
+<h2 id="单位"><a href="#单位" class="headerlink" title="单位"></a>单位</h2><p>北京大学</p>
+<h2 id="关键词"><a href="#关键词" class="headerlink" title="关键词"></a>关键词</h2><p>对话系统、open domain、chatbot</p>
+<h2 id="文章来源"><a href="#文章来源" class="headerlink" title="文章来源"></a>文章来源</h2><p>arXiv</p>
+<h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><p>对话系统中可将问题和检索的结果同时作为输入Encoder之后进行解码Decoder，再将生成的结果和原检索结果重排序</p>
+<h2 id="模型"><a href="#模型" class="headerlink" title="模型"></a>模型</h2><p><img src="http://7xpodp.com1.z0.glb.clouddn.com/blog/20161123/233005658.png" alt=""><br><img src="http://7xpodp.com1.z0.glb.clouddn.com/blog/20161123/233024296.png" alt=""></p>
+<h2 id="相关工作"><a href="#相关工作" class="headerlink" title="相关工作"></a>相关工作</h2><p><img src="http://7xpodp.com1.z0.glb.clouddn.com/blog/20161123/233041282.png" alt=""><br><img src="http://7xpodp.com1.z0.glb.clouddn.com/blog/20161123/233053949.png" alt=""></p>
+<h2 id="简评"><a href="#简评" class="headerlink" title="简评"></a>简评</h2><p>作者的思路非常简单，原来的回复生成模型容易发生回复内容短或者回复信息无意义的问题，在此作者将候选结果和原来的问句同时作为RNN生成器的输入，生成结果后再将本次生成的结果加入原检索候选集中，进行重新排序，实验结果证明此种方法比单独使用检索或单独使用生成效果有大幅提升。</p>
+]]></content>
+      <tags>
+        <tag>RL</tag>
+        <tag>NLG</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>powerline配置</title>
+    <url>/2016/11/10/powerline%E9%85%8D%E7%BD%AE/</url>
+    <content><![CDATA[<p>tmux配置<a href="https://github.com/gpakosz/.tmux" target="_blank" rel="noopener">https://github.com/gpakosz/.tmux</a><br>tmux-powerline:<a href="https://github.com/erikw/tmux-powerline" target="_blank" rel="noopener">https://github.com/erikw/tmux-powerline</a><br>但是现在统一集成在powerline<br><a href="https://github.com/powerline/powerline" target="_blank" rel="noopener">https://github.com/powerline/powerline</a><br>安装完成需要字体补丁，源码上有可直接执行<br>tmux ctrl+b 前缀 +%竖屏分屏 +“横屏分屏<br>tmux ctrl+b + : 命令模式，source ~/.tmux.conf 配置文件生效<br>tmux ctrl+b + [ 复制模式，可滚屏 q 推出该模式<br>tmux ctrl+b + o 切换屏幕</p>
+<p>装完后生效<br>source-file ~/.tmux.conf</p>
+<p>tmux里的session，window,pane<br>—-<br>session指的是按下tmux命令后 存在的连接便是session<br>创建session<br>tmux<br>创建并指定session名字<br>tmux new -s $session_name<br>删除session<br>Ctrl+b :kill-session<br>临时退出session<br>Ctrl+b d<br>列出session<br>tmux ls<br>进入已存在的session<br>tmux a -t $session_name<br>删除所有session<br>Ctrl+b :kill-server<br>删除指定session<br>tmux kill-session -t $session_name<br>—-<br>window在session里，可以有N个window，并且window可以在不同的session里移动<br>创建window<br>Ctrl+b +c<br>删除window<br>Ctrl+b &amp;<br>下一个window<br>Ctrl+b n<br>上一个window<br>Ctrl+b p<br>重命名window<br>Ctrl+b ,<br>在多个window里搜索关键字<br>Ctrl+b f<br>在相邻的两个window里切换<br>Ctrl+b l<br>—-<br>pane在window里，可以有N个pane，并且pane可以在不同的window里移动、合并、拆分<br>创建pane<br>横切split pane horizontal<br>Ctrl+b ” (问号的上面，shift+’)<br>竖切split pane vertical<br>Ctrl+b % （shift+5）<br>按顺序在pane之间移动<br>Ctrl+b o<br>上下左右选择pane<br>Ctrl+b 方向键上下左右<br>调整pane的大小<br>Ctrl+b :resize-pane -U #向上<br>Ctrl+b :resize-pane -D #向下<br>Ctrl+b :resize-pane -L #向左<br>Ctrl+b :resize-pane -R #向右<br>在上下左右的调整里，最后的参数可以加数字 用以控制移动的大小，例如：<br>Ctrl+b :resize-pane -D 50<br>在同一个window里左右移动pane<br>Ctrl+b { （往左边，往上面）<br>Ctrl+b } （往右边，往下面）<br>删除pane<br>Ctrl+b x<br>更换pane排版<br>Ctrl+b “空格”<br>移动pane至window<br>Ctrl+b !<br>移动pane合并至某个window<br>Ctrl+b :join-pane -t $window_name<br>显示pane编号<br>Ctrl+b q<br>按顺序移动pane位置<br>Ctrl+b Ctrl+o<br>—-<br>其他：<br>复制模式<br>Ctrl+b [<br>空格标记复制开始，回车结束复制。<br>粘贴最后一个缓冲区内容<br>Ctrl+b ]<br>选择性粘贴缓冲区<br>Ctrl+b =<br>列出缓冲区目标<br>Ctrl+b :list-buffer<br>查看缓冲区内容<br>Ctrl+b :show-buffer<br>vi模式<br>Ctrl+b :set mode-keys vi<br>显示时间<br>Ctrl+b t<br>快捷键帮助<br>Ctrl+b ? (Ctrl+b :list-keys)<br>tmux内置命令帮助<br>Ctrl+b :list-commands</p>
+]]></content>
+      <categories>
+        <category>其他</category>
+      </categories>
+      <tags>
+        <tag>配置</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>论文速读《On-line Active Reward Learning for Policy Optimisation in Spoken Dialogue Systems》</title>
+    <url>/2016/11/02/On-line%20Active%20Reward%20Learning%20for%20Policy%20Optimisation%20in%20Spoken%20Dialogue%20Systems/</url>
+    <content><![CDATA[<h2 id="原文链接"><a href="#原文链接" class="headerlink" title="原文链接"></a><a href="https://arxiv.org/abs/1605.07669" target="_blank" rel="noopener">原文链接</a></h2><h2 id="作者"><a href="#作者" class="headerlink" title="作者"></a>作者</h2><p>Pei-Hao Su, Milica Gasic, Nikola Mrksic, Lina Rojas-Barahona, Stefan Ultes, David Vandyke, Tsung-Hsien Wen, Steve Young</p>
+<h2 id="单位"><a href="#单位" class="headerlink" title="单位"></a>单位</h2><p>剑桥 </p>
+<h2 id="关键词"><a href="#关键词" class="headerlink" title="关键词"></a>关键词</h2><p>对话系统、强化学习、在线主动奖励学习(On-line Active Reward Learning)</p>
+<h2 id="文章来源"><a href="#文章来源" class="headerlink" title="文章来源"></a>文章来源</h2><p>ACL 2016</p>
+<h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><p>文章提出一种在线学习框架，通过高斯过程分类模型进行主动学习，训练对话策略和奖励模型，减少数据标注的花费和用户反馈中的噪声。<br><a id="more"></a></p>
+<h2 id="模型"><a href="#模型" class="headerlink" title="模型"></a>模型</h2><p><img src="http://7xpodp.com1.z0.glb.clouddn.com/blog/20161123/231954501.png" alt=""><br>框架分为三部分：对话策略、对话嵌入函数、用户反馈主动奖励模型<br>无监督学习输入为双向LSTM，通过Encoder-Decoder模型表征用户意图，将对话的成功与否看做高斯过程的一个二元分类问题，当模型对当前结果不能评判时，主动学习，通过reward模型决定是否询问用户反馈，当模型不确定时，生成增强信号来训练策略。</p>
+<h2 id="资源"><a href="#资源" class="headerlink" title="资源"></a>资源</h2><p>Dataset是在Amazon Mechanical Turk上收集的语料，具体应用在为剑桥地区的一个餐馆电话服务系统进行验证，模型应用的Theano，未开源代码和数据集。</p>
+<h2 id="相关工作"><a href="#相关工作" class="headerlink" title="相关工作"></a>相关工作</h2><p>-之前的工作有用任务完成度和对话持续情况做Reward，但任务完成度不好衡量<br>-用协同过滤表征用户偏好<br>-用逆强化学习从行为中推出reward</p>
+<h2 id="简评"><a href="#简评" class="headerlink" title="简评"></a>简评</h2><p>用lSTM Encoder-Decoder表征用户意图，无需大规模标注语料和构建用户模拟器来进行训练，在较小的训练语料中取得了不错的效果，率先实现了在真实场景中的应用。但Reward函数只关心对话任务是否成功，模型过于简单。</p>
+]]></content>
+      <categories>
+        <category>论文</category>
+      </categories>
+      <tags>
+        <tag>RL</tag>
+        <tag>chatbot</tag>
+      </tags>
+  </entry>
+</search>
