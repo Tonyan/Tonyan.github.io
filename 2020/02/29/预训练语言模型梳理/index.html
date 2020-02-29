@@ -22,31 +22,38 @@
     var CONFIG = {"hostname":"tonya.xyz","root":"/","scheme":"Gemini","version":"7.7.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="Great is the ordinary accumulation of tall.">
-<meta name="keywords" content="相信积累的力量，期待看得见的改变">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Tonya&#39;s Blog">
-<meta property="og:url" content="http://tonya.xyz/index.html">
+  <meta name="description" content="自然语言处理范式总结范式就是规范的意思，在自然语言处理领域目前总共可分为四个里程碑及四个范式，分别为：   第一个范式为1990年以前的处理方法，基本为字典／词典辅以规则 第二个范式主要是2000-2012年的统计机器学习模型 第三个范式则是以深度学习为代表的模型，端到端的神经网络模型 第四个范式是以预训练语言模型加微调为主，再进行模型压缩">
+<meta name="keywords" content="DL,NLP">
+<meta property="og:type" content="article">
+<meta property="og:title" content="预训练语言模型梳理">
+<meta property="og:url" content="http://tonya.xyz/2020/02/29/预训练语言模型梳理/index.html">
 <meta property="og:site_name" content="Tonya&#39;s Blog">
-<meta property="og:description" content="Great is the ordinary accumulation of tall.">
+<meta property="og:description" content="自然语言处理范式总结范式就是规范的意思，在自然语言处理领域目前总共可分为四个里程碑及四个范式，分别为：   第一个范式为1990年以前的处理方法，基本为字典／词典辅以规则 第二个范式主要是2000-2012年的统计机器学习模型 第三个范式则是以深度学习为代表的模型，端到端的神经网络模型 第四个范式是以预训练语言模型加微调为主，再进行模型压缩">
 <meta property="og:locale" content="en">
+<meta property="og:image" content="https://www.msra.cn/wp-content/uploads/2020/01/2019-review-nlp-speech-1.png">
+<meta property="og:image" content="https://pic1.zhimg.com/v2-447ae7707604e7ac520555249332c42c_1200x500.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/Tonyan/BlogPicBed/master//img/预训练模型.png">
+<meta property="og:image" content="https://www.msra.cn/wp-content/uploads/2020/01/2019-review-nlp-speech-2.png">
+<meta property="og:image" content="https://static.leiphone.com/uploads/new/images/20191031/5dba851bec6e1.png?imageView2/2/w/740">
+<meta property="og:updated_time" content="2020-02-29T18:28:11.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Tonya&#39;s Blog">
-<meta name="twitter:description" content="Great is the ordinary accumulation of tall.">
+<meta name="twitter:title" content="预训练语言模型梳理">
+<meta name="twitter:description" content="自然语言处理范式总结范式就是规范的意思，在自然语言处理领域目前总共可分为四个里程碑及四个范式，分别为：   第一个范式为1990年以前的处理方法，基本为字典／词典辅以规则 第二个范式主要是2000-2012年的统计机器学习模型 第三个范式则是以深度学习为代表的模型，端到端的神经网络模型 第四个范式是以预训练语言模型加微调为主，再进行模型压缩">
+<meta name="twitter:image" content="https://www.msra.cn/wp-content/uploads/2020/01/2019-review-nlp-speech-1.png">
 
-<link rel="canonical" href="http://tonya.xyz/">
+<link rel="canonical" href="http://tonya.xyz/2020/02/29/预训练语言模型梳理/">
 
 
 <script id="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
-    isHome: true,
-    isPost: false
+    isHome: false,
+    isPost: true
   };
 </script>
 
-  <title>Tonya's Blog</title>
+  <title>预训练语言模型梳理 | Tonya's Blog</title>
   
 
 
@@ -185,10 +192,10 @@
             
 
   <div class="posts-expand">
-        
+      
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="en">
     <link itemprop="mainEntityOfPage" href="http://tonya.xyz/2020/02/29/预训练语言模型梳理/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -202,8 +209,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/02/29/预训练语言模型梳理/" class="post-title-link" itemprop="url">预训练语言模型梳理</a>
+          预训练语言模型梳理
         </h1>
 
         <div class="post-meta">
@@ -232,7 +238,14 @@
                 </span>
             </span>
 
-          <br>
+          
+            <span class="post-meta-item" title="Views" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">Views: </span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span><br>
             <span class="post-meta-item" title="Symbols count in article">
               <span class="post-meta-item-icon">
                 <i class="fa fa-file-word-o"></i>
@@ -257,7 +270,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h6 id="自然语言处理范式总结"><a href="#自然语言处理范式总结" class="headerlink" title="自然语言处理范式总结"></a>自然语言处理范式总结</h6><p>范式就是规范的意思，在自然语言处理领域目前总共可分为四个里程碑及四个范式，分别为：</p>
+        <h6 id="自然语言处理范式总结"><a href="#自然语言处理范式总结" class="headerlink" title="自然语言处理范式总结"></a>自然语言处理范式总结</h6><p>范式就是规范的意思，在自然语言处理领域目前总共可分为四个里程碑及四个范式，分别为：</p>
 <p><img src="https://www.msra.cn/wp-content/uploads/2020/01/2019-review-nlp-speech-1.png" alt=""></p>
 <ol>
 <li>第一个范式为1990年以前的处理方法，基本为字典／词典辅以规则</li>
@@ -265,23 +278,68 @@
 <li>第三个范式则是以深度学习为代表的模型，端到端的神经网络模型</li>
 <li>第四个范式是以预训练语言模型加微调为主，再进行模型压缩</li>
 </ol>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2020/02/29/预训练语言模型梳理/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
+<a id="more"></a>
+<h4 id="详尽的预处理模型关系图"><a href="#详尽的预处理模型关系图" class="headerlink" title="详尽的预处理模型关系图"></a>详尽的预处理模型关系图</h4><p><img src="https://pic1.zhimg.com/v2-447ae7707604e7ac520555249332c42c_1200x500.jpg" alt=""></p>
+<ol>
+<li>预训练语言模型</li>
+</ol>
+<p>模型可以通过监督学习方法获得，这是最常规的统计学习思路</p>
+<p>今年来涌现的预训练语言模型则可利用三种不同类型的数据学习得到模型：</p>
+<ul>
+<li>生文本：通过自监督学习（self-supervised learning）得到预训练模型</li>
+<li>辅助任务标注数据：通过预训练（pre-training）得到预训练模型</li>
+<li>标注数据：通过精调（fine-tuning）得到预训练模型</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/Tonyan/BlogPicBed/master//img/预训练模型.png" alt=""></p>
+<h4 id="词向量时代"><a href="#词向量时代" class="headerlink" title="词向量时代"></a>词向量时代</h4><h4 id="预训练语言模型时代"><a href="#预训练语言模型时代" class="headerlink" title="预训练语言模型时代"></a>预训练语言模型时代</h4><h5 id="预处理范式时间轴"><a href="#预处理范式时间轴" class="headerlink" title="预处理范式时间轴"></a>预处理范式时间轴</h5><p><img src="https://www.msra.cn/wp-content/uploads/2020/01/2019-review-nlp-speech-2.png" alt=""></p>
+<h5 id="各种预处理语言模型发展关系图"><a href="#各种预处理语言模型发展关系图" class="headerlink" title="各种预处理语言模型发展关系图"></a>各种预处理语言模型发展关系图</h5><p><img src="https://static.leiphone.com/uploads/new/images/20191031/5dba851bec6e1.png?imageView2/2/w/740" alt=""></p>
+<h4 id="参考资料："><a href="#参考资料：" class="headerlink" title="参考资料："></a>参考资料：</h4><ol>
+<li><a href="http://ir.hit.edu.cn/~car/talks/pre-training4nlp.pdf" target="_blank" rel="noopener">预训练模型-自然语言处理的新范式 </a></li>
+<li><a href="https://www.msra.cn/zh-cn/news/features/2019-review-nlp-speech" target="_blank" rel="noopener">NLP新范式凸显跨任务、跨语言能力，语音处理落地开花</a></li>
+<li><a href="https://www.leiphone.com/news/201910/VIRhfQaQERfRedvB.html" target="_blank" rel="noopener">NLP领域预训练模型的现状及分析</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/93781241" target="_blank" rel="noopener">预训练语言模型(PLMs)走的飞快</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/85221503" target="_blank" rel="noopener">NLP预训练模型：从transformer到albert</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/76912493" target="_blank" rel="noopener">nlp中的预训练语言模型总结(单向模型、BERT系列模型、XLNet)</a></li>
+<li><a href="http://www.xuwei.io/2018/11/20/nlp的巨人肩膀/" target="_blank" rel="noopener">NLP的巨人肩膀</a></li>
+<li></li>
+</ol>
+
     </div>
 
     
     
     
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>Post author:  </strong>Tonya Tsao
+  </li>
+  <li class="post-copyright-link">
+    <strong>Post link: </strong>
+    <a href="http://tonya.xyz/2020/02/29/预训练语言模型梳理/" title="预训练语言模型梳理">http://tonya.xyz/2020/02/29/预训练语言模型梳理/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> unless stating additionally.
+  </li>
+</ul>
+</div>
+
+
       <footer class="post-footer">
-        <div class="post-eof"></div>
+          
+          <div class="post-tags">
+              <a href="/tags/DL/" rel="tag"><i class="fa fa-tag"></i> DL</a>
+              <a href="/tags/NLP/" rel="tag"><i class="fa fa-tag"></i> NLP</a>
+          </div>
+
+        
+
+
+        
       </footer>
+    
   </article>
   
   
@@ -289,12 +347,10 @@
 
   </div>
 
-  
-
-
 
           </div>
           
+    <div class="comments" id="gitalk-container"></div>
 
 <script>
   window.addEventListener('tabs:register', () => {
@@ -341,6 +397,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-6"><a class="nav-link" href="#自然语言处理范式总结"><span class="nav-number">1.</span> <span class="nav-text">自然语言处理范式总结</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#详尽的预处理模型关系图"><span class="nav-number"></span> <span class="nav-text">详尽的预处理模型关系图</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#词向量时代"><span class="nav-number"></span> <span class="nav-text">词向量时代</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#预训练语言模型时代"><span class="nav-number"></span> <span class="nav-text">预训练语言模型时代</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#预处理范式时间轴"><span class="nav-number"></span> <span class="nav-text">预处理范式时间轴</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#各种预处理语言模型发展关系图"><span class="nav-number"></span> <span class="nav-text">各种预处理语言模型发展关系图</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#参考资料："><span class="nav-number"></span> <span class="nav-text">参考资料：</span></a></div>
       </div>
       <!--/noindex-->
 
@@ -495,6 +552,25 @@
 
   
 
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css">
+
+<script>
+NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js', () => {
+    var gitalk = new Gitalk({
+      clientID    : '2f54709f117e0f9560a2',
+      clientSecret: 'dc98368e719a0bed74005d93e8332d5a2f052a07',
+      repo        : 'gitalk-comment',
+      owner       : 'Tonyan',
+      admin       : ['Tonya'],
+      id          : 'b88c19c6f400831c3e55da731e989537',
+        language: 'en',
+      distractionFreeMode: false
+    });
+    gitalk.render('gitalk-container');
+  }, window.Gitalk);
+});
+</script>
 
   
       <script type="text/javascript" src="/js/clicklove.js"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
