@@ -1,6 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>BERT详解</title>
+    <url>/2020/02/29/BERT%E8%AF%A6%E8%A7%A3/</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
+    <title></title>
+    <url>/2020/02/29/%E9%A2%84%E8%AE%AD%E7%BB%83%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B%E6%80%BB%E7%BB%93/</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
     <title>“会话管理”</title>
     <url>/2018/08/14/%E2%80%9C%E4%BC%9A%E8%AF%9D%E7%AE%A1%E7%90%86%E2%80%9D/</url>
     <content><![CDATA[<h2 id="NLP简介"><a href="#NLP简介" class="headerlink" title="NLP简介"></a>NLP简介</h2><p>亲爱的观众朋友们，大家好，欢迎来到AI有趣电台。第一次和大家见面</p>
@@ -91,18 +101,6 @@ translation-task.html" target="_blank" rel="noopener">WMT’14</a></p>
       </tags>
   </entry>
   <entry>
-    <title>tensorflow-HPC配置方法</title>
-    <url>/2016/11/22/tensorflow-HPC%E9%85%8D%E7%BD%AE%E6%96%B9%E6%B3%95/</url>
-    <content><![CDATA[<p>师弟写的，拿来备份<br>（目前是在gpu05上安装的gpu版本的tensorflow，测试其他gpu貌似不能一样用）<br>1.去github上下载0.9版本的tensorflow的gpu-linux版本的.whl文件，上传到HPC<br>2.下载pip2.7（如果有就不用装了），用pip2.7 install –upgrade –user <strong><em>.whl安装到用户目录下（</em></strong>.whl为第一步下的文件）<br>3.vim进入当前用户的.bash_profile文件，增加如下两行：<br>LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/cuda-7.5/lib64<br>export LD_LIBRARY_PATH<br>4.wq保存退出<br>5.退出HPC，重新连接进入gpu05，进入python命令行，import tensorflow测试一下，成功输出五个sucessfully则成功<br>（6.为确保在screen里也能正常使用tensorflow的用户配置，在用户目录下新建.screenrc文件,并在里面添加shell -$SHELL，保存退出即可，详情参照<br><a href="http://blog.csdn.net/yasaken/article/details/7418583）" target="_blank" rel="noopener">http://blog.csdn.net/yasaken/article/details/7418583）</a></p>
-]]></content>
-      <categories>
-        <category>技术</category>
-      </categories>
-      <tags>
-        <tag>技术</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Hexo Latex公式支持</title>
     <url>/2016/11/22/%E6%8A%98%E8%85%BE%E5%8D%9A%E5%AE%A2%E6%94%AF%E6%8C%81latex%E5%85%AC%E5%BC%8F/</url>
     <content><![CDATA[<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;script type=&quot;text/javascript&quot; src=&quot;http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default&quot;&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure>
@@ -112,16 +110,38 @@ translation-task.html" target="_blank" rel="noopener">WMT’14</a></p>
 </ol>
 <a id="more"></a>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;script type=&quot;text/javascript&quot; src=&quot;http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default&quot;&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-<ol start="3">
-<li>加入之后在本地发现可支持，但是用hexo部署至自己的博客系统不支持，发现有人实现了一个<a href="http://blog.csdn.net/xiahouzuoxin/article/details/26478179" target="_blank" rel="noopener">插件</a><br>安装 <code>npm install hexo-math --save</code></li>
-<li>此处需要注意，不要在_config.yml中添加关于该插件的配置信息，因为它会自动生成</li>
-<li>我安装完之后运行依然没有实现公式效果，发现再安装一个插件即可解决<br><code>npm install hexo-renderer-mathjax --save</code></li>
-<li>以下为公式测试<br>行内公式：Simple inline $a = b + c$.<br>段间公式：<br>$$\frac{\partial u}{\partial t}<br>= h^2 \left( \frac{\partial^2 u}{\partial x^2} +<br>\frac{\partial^2 u}{\partial y^2} +<br>\frac{\partial^2 u}{\partial z^2}\right)$$<br>至此终于完美的解决了问题，好开心，哈哈</li>
-<li>还有个小技巧，Sublime Text安装LiveReload同时chrome浏览器也安装该插件，即可在运行<code>hexo -s</code>之后同步调试，可视化码字，简直不能再爽啦O(∩<em>∩)O~~</em>)解决完所有问题下面该专注内容本身啦，加油！！</li>
+<ol>
+<li><p>加入之后在本地发现可支持，但是用hexo部署至自己的博客系统不支持，发现有人实现了一个<a href="http://blog.csdn.net/xiahouzuoxin/article/details/26478179" target="_blank" rel="noopener">插件</a><br>安装 <code>npm install hexo-math --save</code></p>
+</li>
+<li><p>此处需要注意，不要在_config.yml中添加关于该插件的配置信息，因为它会自动生成</p>
+</li>
+<li><p>我安装完之后运行依然没有实现公式效果，发现再安装一个插件即可解决<br><code>npm install hexo-renderer-mathjax --save</code></p>
+</li>
+<li><p>以下为公式测试<br>行内公式：Simple inline $a = b + c$.</p>
+<p>段间公式：</p>
+<script type="math/tex; mode=display">\frac{\partial u}{\partial t}
+= h^2 \left( \frac{\partial^2 u}{\partial x^2} +
+\frac{\partial^2 u}{\partial y^2} +
+\frac{\partial^2 u}{\partial z^2}\right)</script><p>至此终于完美的解决了问题，好开心，哈哈</p>
+</li>
+<li><p>还有个小技巧，Sublime Text安装LiveReload同时chrome浏览器也安装该插件，即可在运行<code>hexo -s</code>之后同步调试，可视化码字，简直不能再爽啦O(∩<em>∩)O~~</em>)解决完所有问题下面该专注内容本身啦，加油！！</p>
+</li>
 </ol>
 ]]></content>
       <categories>
         <category>配置</category>
+      </categories>
+      <tags>
+        <tag>技术</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>tensorflow-HPC配置方法</title>
+    <url>/2016/11/22/tensorflow-HPC%E9%85%8D%E7%BD%AE%E6%96%B9%E6%B3%95/</url>
+    <content><![CDATA[<p>师弟写的，拿来备份<br>（目前是在gpu05上安装的gpu版本的tensorflow，测试其他gpu貌似不能一样用）<br>1.去github上下载0.9版本的tensorflow的gpu-linux版本的.whl文件，上传到HPC<br>2.下载pip2.7（如果有就不用装了），用pip2.7 install –upgrade –user <strong><em>.whl安装到用户目录下（</em></strong>.whl为第一步下的文件）<br>3.vim进入当前用户的.bash_profile文件，增加如下两行：<br>LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/cuda-7.5/lib64<br>export LD_LIBRARY_PATH<br>4.wq保存退出<br>5.退出HPC，重新连接进入gpu05，进入python命令行，import tensorflow测试一下，成功输出五个sucessfully则成功<br>（6.为确保在screen里也能正常使用tensorflow的用户配置，在用户目录下新建.screenrc文件,并在里面添加shell -$SHELL，保存退出即可，详情参照<br><a href="http://blog.csdn.net/yasaken/article/details/7418583）" target="_blank" rel="noopener">http://blog.csdn.net/yasaken/article/details/7418583）</a></p>
+]]></content>
+      <categories>
+        <category>技术</category>
       </categories>
       <tags>
         <tag>技术</tag>
@@ -147,24 +167,6 @@ translation-task.html" target="_blank" rel="noopener">WMT’14</a></p>
       </categories>
       <tags>
         <tag>RL</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>论文速读《Two are Better than One An Ensemble of Retrieval and Generation-Based Dialog》</title>
-    <url>/2016/11/10/Two%20are%20%20Better%20than%20One%20An%20Ensemble%20of%20Retrieval%20and%20Generation-Based%20Dialog/</url>
-    <content><![CDATA[<h2 id="作者"><a href="#作者" class="headerlink" title="作者"></a>作者</h2><p>Yiping Song, Rui Yan, Xiang Li, Dongyan Zhao, Ming Zhang</p>
-<h2 id="单位"><a href="#单位" class="headerlink" title="单位"></a>单位</h2><p>北京大学</p>
-<h2 id="关键词"><a href="#关键词" class="headerlink" title="关键词"></a>关键词</h2><p>对话系统、open domain、chatbot</p>
-<h2 id="文章来源"><a href="#文章来源" class="headerlink" title="文章来源"></a>文章来源</h2><p>arXiv</p>
-<a id="more"></a>
-<h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><p>对话系统中可将问题和检索的结果同时作为输入Encoder之后进行解码Decoder，再将生成的结果和原检索结果重排序</p>
-<h2 id="模型"><a href="#模型" class="headerlink" title="模型"></a>模型</h2><p><img src="http://7xpodp.com1.z0.glb.clouddn.com/blog/20161123/233005658.png" alt=""><br><img src="http://7xpodp.com1.z0.glb.clouddn.com/blog/20161123/233024296.png" alt=""></p>
-<h2 id="相关工作"><a href="#相关工作" class="headerlink" title="相关工作"></a>相关工作</h2><p><img src="http://7xpodp.com1.z0.glb.clouddn.com/blog/20161123/233041282.png" alt=""><br><img src="http://7xpodp.com1.z0.glb.clouddn.com/blog/20161123/233053949.png" alt=""></p>
-<h2 id="简评"><a href="#简评" class="headerlink" title="简评"></a>简评</h2><p>作者的思路非常简单，原来的回复生成模型容易发生回复内容短或者回复信息无意义的问题，在此作者将候选结果和原来的问句同时作为RNN生成器的输入，生成结果后再将本次生成的结果加入原检索候选集中，进行重新排序，实验结果证明此种方法比单独使用检索或单独使用生成效果有大幅提升。</p>
-]]></content>
-      <tags>
-        <tag>RL</tag>
-        <tag>NLG</tag>
       </tags>
   </entry>
   <entry>
@@ -199,6 +201,24 @@ translation-task.html" target="_blank" rel="noopener">WMT’14</a></p>
         <tag>NLP</tag>
         <tag>RL</tag>
         <tag>chatbot</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>论文速读《Two are Better than One An Ensemble of Retrieval and Generation-Based Dialog》</title>
+    <url>/2016/11/10/Two%20are%20%20Better%20than%20One%20An%20Ensemble%20of%20Retrieval%20and%20Generation-Based%20Dialog/</url>
+    <content><![CDATA[<h2 id="作者"><a href="#作者" class="headerlink" title="作者"></a>作者</h2><p>Yiping Song, Rui Yan, Xiang Li, Dongyan Zhao, Ming Zhang</p>
+<h2 id="单位"><a href="#单位" class="headerlink" title="单位"></a>单位</h2><p>北京大学</p>
+<h2 id="关键词"><a href="#关键词" class="headerlink" title="关键词"></a>关键词</h2><p>对话系统、open domain、chatbot</p>
+<h2 id="文章来源"><a href="#文章来源" class="headerlink" title="文章来源"></a>文章来源</h2><p>arXiv</p>
+<a id="more"></a>
+<h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><p>对话系统中可将问题和检索的结果同时作为输入Encoder之后进行解码Decoder，再将生成的结果和原检索结果重排序</p>
+<h2 id="模型"><a href="#模型" class="headerlink" title="模型"></a>模型</h2><p><img src="http://7xpodp.com1.z0.glb.clouddn.com/blog/20161123/233005658.png" alt=""><br><img src="http://7xpodp.com1.z0.glb.clouddn.com/blog/20161123/233024296.png" alt=""></p>
+<h2 id="相关工作"><a href="#相关工作" class="headerlink" title="相关工作"></a>相关工作</h2><p><img src="http://7xpodp.com1.z0.glb.clouddn.com/blog/20161123/233041282.png" alt=""><br><img src="http://7xpodp.com1.z0.glb.clouddn.com/blog/20161123/233053949.png" alt=""></p>
+<h2 id="简评"><a href="#简评" class="headerlink" title="简评"></a>简评</h2><p>作者的思路非常简单，原来的回复生成模型容易发生回复内容短或者回复信息无意义的问题，在此作者将候选结果和原来的问句同时作为RNN生成器的输入，生成结果后再将本次生成的结果加入原检索候选集中，进行重新排序，实验结果证明此种方法比单独使用检索或单独使用生成效果有大幅提升。</p>
+]]></content>
+      <tags>
+        <tag>RL</tag>
+        <tag>NLG</tag>
       </tags>
   </entry>
   <entry>
