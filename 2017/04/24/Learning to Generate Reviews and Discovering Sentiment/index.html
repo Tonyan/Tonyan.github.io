@@ -22,18 +22,18 @@
     var CONFIG = {"hostname":"tonya.xyz","root":"/","scheme":"Gemini","version":"7.7.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="链接##摘要我们提出了一种byte-level的RNN language model。当给出足够的空间、训练数据、计算时间，通过该模型的表示包括disentangled features（不依赖特征？）和高水平的概念一致？特别地，我们发现了一个单独的情感分析单元。这些表示学习了一个无监督的方式，并在斯坦福情感分析树图资料库SST的二元分类上取得了最好的结果。而且该模型数据有效？只用一部分的标注数据">
+  <meta name="description" content="链接摘要我们提出了一种byte-level的RNN language model。当给出足够的空间、训练数据、计算时间，通过该模型的表示包括disentangled features（不依赖特征？）和高水平的概念一致？特别地，我们发现了一个单独的情感分析单元。这些表示学习了一个无监督的方式，并在斯坦福情感分析树图资料库SST的二元分类上取得了最好的结果。而且该模型数据有效？只用一部分的标注数据和在">
 <meta name="keywords" content="sentiment,genetate">
 <meta property="og:type" content="article">
 <meta property="og:title" content="论文速读《Learning to Generate Reviews and Discovering Sentiment》">
 <meta property="og:url" content="http://tonya.xyz/2017/04/24/Learning to Generate Reviews and Discovering Sentiment/index.html">
 <meta property="og:site_name" content="Tonya&#39;s Blog">
-<meta property="og:description" content="链接##摘要我们提出了一种byte-level的RNN language model。当给出足够的空间、训练数据、计算时间，通过该模型的表示包括disentangled features（不依赖特征？）和高水平的概念一致？特别地，我们发现了一个单独的情感分析单元。这些表示学习了一个无监督的方式，并在斯坦福情感分析树图资料库SST的二元分类上取得了最好的结果。而且该模型数据有效？只用一部分的标注数据">
+<meta property="og:description" content="链接摘要我们提出了一种byte-level的RNN language model。当给出足够的空间、训练数据、计算时间，通过该模型的表示包括disentangled features（不依赖特征？）和高水平的概念一致？特别地，我们发现了一个单独的情感分析单元。这些表示学习了一个无监督的方式，并在斯坦福情感分析树图资料库SST的二元分类上取得了最好的结果。而且该模型数据有效？只用一部分的标注数据和在">
 <meta property="og:locale" content="en">
 <meta property="og:updated_time" content="2018-07-03T17:14:02.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="论文速读《Learning to Generate Reviews and Discovering Sentiment》">
-<meta name="twitter:description" content="链接##摘要我们提出了一种byte-level的RNN language model。当给出足够的空间、训练数据、计算时间，通过该模型的表示包括disentangled features（不依赖特征？）和高水平的概念一致？特别地，我们发现了一个单独的情感分析单元。这些表示学习了一个无监督的方式，并在斯坦福情感分析树图资料库SST的二元分类上取得了最好的结果。而且该模型数据有效？只用一部分的标注数据">
+<meta name="twitter:description" content="链接摘要我们提出了一种byte-level的RNN language model。当给出足够的空间、训练数据、计算时间，通过该模型的表示包括disentangled features（不依赖特征？）和高水平的概念一致？特别地，我们发现了一个单独的情感分析单元。这些表示学习了一个无监督的方式，并在斯坦福情感分析树图资料库SST的二元分类上取得了最好的结果。而且该模型数据有效？只用一部分的标注数据和在">
 
 <link rel="canonical" href="http://tonya.xyz/2017/04/24/Learning to Generate Reviews and Discovering Sentiment/">
 
@@ -129,17 +129,17 @@
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>Tags<span class="badge">9</span></a>
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>Tags<span class="badge">10</span></a>
 
   </li>
         <li class="menu-item menu-item-categories">
 
-    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>Categories<span class="badge">5</span></a>
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>Categories<span class="badge">6</span></a>
 
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>Archives<span class="badge">14</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>Archives<span class="badge">15</span></a>
 
   </li>
       <li class="menu-item menu-item-search">
@@ -245,7 +245,7 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">Symbols count in article: </span>
-              <span>405</span>
+              <span>401</span>
             </span>
             <span class="post-meta-item" title="Reading time">
               <span class="post-meta-item-icon">
@@ -264,8 +264,8 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h2 id="链接"><a href="#链接" class="headerlink" title="链接"></a><a href="https://arxiv.org/abs/1704.01444" target="_blank" rel="noopener">链接</a></h2><p>##摘要<br>我们提出了一种byte-level的RNN language model。当给出足够的空间、训练数据、计算时间，通过该模型的表示包括disentangled features（不依赖特征？）和高水平的概念一致？<br>特别地，我们发现了一个单独的情感分析单元。这些表示学习了一个无监督的方式，并在斯坦福情感分析树图资料库SST的二元分类上取得了最好的结果。而且该模型数据有效？只用一部分的标注数据和在所有数据上取得的baseline相当。我们也证明了该情感单元对于模型的生成结果有直接影响。简单的修改他的值为积极或者消极生成的样例即为积极或者消极的情感。</p>
-<p>##简介和动机<br>表示学习在目前机器学习系统中扮演者关键的角色。表示将原始数据映射成更实用的形式，并且表示学习的选择对于任何应用都是至关重要的成分。更一般的说，有两个领域的研究强调如何学习有用表示的不同细节。<br>有标注的大规模语料高维度的监督学习训练是非常非常重要的</p>
+        <h2 id="链接"><a href="#链接" class="headerlink" title="链接"></a><a href="https://arxiv.org/abs/1704.01444" target="_blank" rel="noopener">链接</a></h2><h2 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h2><p>我们提出了一种byte-level的RNN language model。当给出足够的空间、训练数据、计算时间，通过该模型的表示包括disentangled features（不依赖特征？）和高水平的概念一致？<br>特别地，我们发现了一个单独的情感分析单元。这些表示学习了一个无监督的方式，并在斯坦福情感分析树图资料库SST的二元分类上取得了最好的结果。而且该模型数据有效？只用一部分的标注数据和在所有数据上取得的baseline相当。我们也证明了该情感单元对于模型的生成结果有直接影响。简单的修改他的值为积极或者消极生成的样例即为积极或者消极的情感。</p>
+<h2 id="简介和动机"><a href="#简介和动机" class="headerlink" title="简介和动机"></a>简介和动机</h2><p>表示学习在目前机器学习系统中扮演者关键的角色。表示将原始数据映射成更实用的形式，并且表示学习的选择对于任何应用都是至关重要的成分。更一般的说，有两个领域的研究强调如何学习有用表示的不同细节。<br>有标注的大规模语料高维度的监督学习训练是非常非常重要的</p>
 <a id="more"></a>
 
     </div>
@@ -371,7 +371,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#链接"><span class="nav-number">1.</span> <span class="nav-text">链接</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#链接"><span class="nav-number">1.</span> <span class="nav-text">链接</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#摘要"><span class="nav-number">2.</span> <span class="nav-text">摘要</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#简介和动机"><span class="nav-number">3.</span> <span class="nav-text">简介和动机</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -387,20 +387,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">14</span>
+          <span class="site-state-item-count">15</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-count">6</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-count">10</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>

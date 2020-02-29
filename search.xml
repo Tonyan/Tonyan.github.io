@@ -1,6 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>testPicBed</title>
+    <url>/2020/02/29/testPicBed/</url>
+    <content><![CDATA[<p>这是第一张图片</p>
+<p><img src="http://tonya.xyz/imgWechatIMG202.jpeg" alt=""></p>
+<p>这是第二张图片：</p>
+<p><img src="http://tonya.xyz/img/photo.jpeg" alt=""></p>
+]]></content>
+      <categories>
+        <category>test</category>
+      </categories>
+      <tags>
+        <tag>test</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>BERT详解</title>
     <url>/2020/02/29/BERT%E8%AF%A6%E8%A7%A3/</url>
     <content><![CDATA[]]></content>
@@ -44,8 +59,8 @@
   <entry>
     <title>论文速读《Learning to Generate Reviews and Discovering Sentiment》</title>
     <url>/2017/04/24/Learning%20to%20Generate%20Reviews%20and%20Discovering%20Sentiment/</url>
-    <content><![CDATA[<h2 id="链接"><a href="#链接" class="headerlink" title="链接"></a><a href="https://arxiv.org/abs/1704.01444" target="_blank" rel="noopener">链接</a></h2><p>##摘要<br>我们提出了一种byte-level的RNN language model。当给出足够的空间、训练数据、计算时间，通过该模型的表示包括disentangled features（不依赖特征？）和高水平的概念一致？<br>特别地，我们发现了一个单独的情感分析单元。这些表示学习了一个无监督的方式，并在斯坦福情感分析树图资料库SST的二元分类上取得了最好的结果。而且该模型数据有效？只用一部分的标注数据和在所有数据上取得的baseline相当。我们也证明了该情感单元对于模型的生成结果有直接影响。简单的修改他的值为积极或者消极生成的样例即为积极或者消极的情感。</p>
-<p>##简介和动机<br>表示学习在目前机器学习系统中扮演者关键的角色。表示将原始数据映射成更实用的形式，并且表示学习的选择对于任何应用都是至关重要的成分。更一般的说，有两个领域的研究强调如何学习有用表示的不同细节。<br>有标注的大规模语料高维度的监督学习训练是非常非常重要的</p>
+    <content><![CDATA[<h2 id="链接"><a href="#链接" class="headerlink" title="链接"></a><a href="https://arxiv.org/abs/1704.01444" target="_blank" rel="noopener">链接</a></h2><h2 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h2><p>我们提出了一种byte-level的RNN language model。当给出足够的空间、训练数据、计算时间，通过该模型的表示包括disentangled features（不依赖特征？）和高水平的概念一致？<br>特别地，我们发现了一个单独的情感分析单元。这些表示学习了一个无监督的方式，并在斯坦福情感分析树图资料库SST的二元分类上取得了最好的结果。而且该模型数据有效？只用一部分的标注数据和在所有数据上取得的baseline相当。我们也证明了该情感单元对于模型的生成结果有直接影响。简单的修改他的值为积极或者消极生成的样例即为积极或者消极的情感。</p>
+<h2 id="简介和动机"><a href="#简介和动机" class="headerlink" title="简介和动机"></a>简介和动机</h2><p>表示学习在目前机器学习系统中扮演者关键的角色。表示将原始数据映射成更实用的形式，并且表示学习的选择对于任何应用都是至关重要的成分。更一般的说，有两个领域的研究强调如何学习有用表示的不同细节。<br>有标注的大规模语料高维度的监督学习训练是非常非常重要的</p>
 <a id="more"></a>
 ]]></content>
       <categories>
@@ -101,6 +116,18 @@ translation-task.html" target="_blank" rel="noopener">WMT’14</a></p>
       </tags>
   </entry>
   <entry>
+    <title>tensorflow-HPC配置方法</title>
+    <url>/2016/11/22/tensorflow-HPC%E9%85%8D%E7%BD%AE%E6%96%B9%E6%B3%95/</url>
+    <content><![CDATA[<p>师弟写的，拿来备份<br>（目前是在gpu05上安装的gpu版本的tensorflow，测试其他gpu貌似不能一样用）<br>1.去github上下载0.9版本的tensorflow的gpu-linux版本的.whl文件，上传到HPC<br>2.下载pip2.7（如果有就不用装了），用pip2.7 install —upgrade —user <strong><em>.whl安装到用户目录下（</em></strong>.whl为第一步下的文件）<br>3.vim进入当前用户的.bash_profile文件，增加如下两行：<br>LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/cuda-7.5/lib64<br>export LD_LIBRARY_PATH<br>4.wq保存退出<br>5.退出HPC，重新连接进入gpu05，进入python命令行，import tensorflow测试一下，成功输出五个sucessfully则成功<br>（6.为确保在screen里也能正常使用tensorflow的用户配置，在用户目录下新建.screenrc文件,并在里面添加shell -$SHELL，保存退出即可，详情参照<br><a href="http://blog.csdn.net/yasaken/article/details/7418583）" target="_blank" rel="noopener">http://blog.csdn.net/yasaken/article/details/7418583）</a></p>
+]]></content>
+      <categories>
+        <category>技术</category>
+      </categories>
+      <tags>
+        <tag>技术</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Hexo Latex公式支持</title>
     <url>/2016/11/22/%E6%8A%98%E8%85%BE%E5%8D%9A%E5%AE%A2%E6%94%AF%E6%8C%81latex%E5%85%AC%E5%BC%8F/</url>
     <content><![CDATA[<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;script type=&quot;text/javascript&quot; src=&quot;http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default&quot;&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure>
@@ -130,18 +157,6 @@ translation-task.html" target="_blank" rel="noopener">WMT’14</a></p>
 ]]></content>
       <categories>
         <category>配置</category>
-      </categories>
-      <tags>
-        <tag>技术</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>tensorflow-HPC配置方法</title>
-    <url>/2016/11/22/tensorflow-HPC%E9%85%8D%E7%BD%AE%E6%96%B9%E6%B3%95/</url>
-    <content><![CDATA[<p>师弟写的，拿来备份<br>（目前是在gpu05上安装的gpu版本的tensorflow，测试其他gpu貌似不能一样用）<br>1.去github上下载0.9版本的tensorflow的gpu-linux版本的.whl文件，上传到HPC<br>2.下载pip2.7（如果有就不用装了），用pip2.7 install –upgrade –user <strong><em>.whl安装到用户目录下（</em></strong>.whl为第一步下的文件）<br>3.vim进入当前用户的.bash_profile文件，增加如下两行：<br>LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/cuda-7.5/lib64<br>export LD_LIBRARY_PATH<br>4.wq保存退出<br>5.退出HPC，重新连接进入gpu05，进入python命令行，import tensorflow测试一下，成功输出五个sucessfully则成功<br>（6.为确保在screen里也能正常使用tensorflow的用户配置，在用户目录下新建.screenrc文件,并在里面添加shell -$SHELL，保存退出即可，详情参照<br><a href="http://blog.csdn.net/yasaken/article/details/7418583）" target="_blank" rel="noopener">http://blog.csdn.net/yasaken/article/details/7418583）</a></p>
-]]></content>
-      <categories>
-        <category>技术</category>
       </categories>
       <tags>
         <tag>技术</tag>
