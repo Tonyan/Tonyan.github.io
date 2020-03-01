@@ -45,4 +45,39 @@
         <tag>NLP</tag>
       </tags>
   </entry>
+  <entry>
+    <title>Hexo Latex公式支持</title>
+    <url>/2016/11/22/%E6%8A%98%E8%85%BE%E5%8D%9A%E5%AE%A2%E6%94%AF%E6%8C%81latex%E5%85%AC%E5%BC%8F/</url>
+    <content><![CDATA[<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">&lt;script type=<span class="string">"text/javascript"</span> src=<span class="string">"http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"</span>&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<ol>
+<li>sublime texta安装markdown editing preview插件（ctrl+shift+p）输入install，在弹出窗口中输入需安装插件名称，回车即可，安装后ctrl+b运行即可在本地生成html文件预览。</li>
+<li>markdown文件头部填入以支持MathJax引擎（用图片解析或者接口方式发现速度太慢）</li>
+</ol>
+<a id="more"></a>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">&lt;script type=<span class="string">"text/javascript"</span> src=<span class="string">"http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"</span>&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<ol>
+<li><p>加入之后在本地发现可支持，但是用hexo部署至自己的博客系统不支持，发现有人实现了一个<a href="http://blog.csdn.net/xiahouzuoxin/article/details/26478179" target="_blank" rel="noopener">插件</a><br> 安装 <code>npm install hexo-math --save</code></p>
+</li>
+<li><p>此处需要注意，不要在_config.yml中添加关于该插件的配置信息，因为它会自动生成</p>
+</li>
+<li><p>我安装完之后运行依然没有实现公式效果，发现再安装一个插件即可解决<br> <code>npm install hexo-renderer-mathjax --save</code></p>
+</li>
+<li><p>以下为公式测试<br> 行内公式：Simple inline $a = b + c$.</p>
+<p>段间公式：</p>
+<script type="math/tex; mode=display">\frac{\partial u}{\partial t}
+= h^2 \left( \frac{\partial^2 u}{\partial x^2} +
+\frac{\partial^2 u}{\partial y^2} +
+\frac{\partial^2 u}{\partial z^2}\right)</script><p>至此终于完美的解决了问题，好开心，哈哈</p>
+</li>
+<li><p>还有个小技巧，Sublime Text安装LiveReload同时chrome浏览器也安装该插件，即可在运行<code>hexo -s</code>之后同步调试，可视化码字，简直不能再爽啦O(∩<em>∩)O~~</em>)解决完所有问题下面该专注内容本身啦，加油！！</p>
+</li>
+</ol>
+]]></content>
+      <categories>
+        <category>配置</category>
+      </categories>
+      <tags>
+        <tag>技术</tag>
+      </tags>
+  </entry>
 </search>
