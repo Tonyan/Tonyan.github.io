@@ -1,6 +1,155 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>刷题记录--滑动窗口相关</title>
+    <url>/2022/10/01/sliding-windows/</url>
+    <content><![CDATA[<h4 id="209-长度最小的子数组"><a href="#209-长度最小的子数组" class="headerlink" title="209. 长度最小的子数组"></a><a href="https://leetcode.cn/problems/minimum-size-subarray-sum/" target="_blank" rel="noopener">209. 长度最小的子数组</a></h4><p>难度中等1393收藏分享切换为英文接收动态反馈</p>
+<p>给定一个含有 <code>n</code> 个正整数的数组和一个正整数 <code>target</code> <strong>。</strong></p>
+<p>找出该数组中满足其和 <code>≥ target</code> 的长度最小的 <strong>连续子数组</strong> <code>[numsl, numsl+1, ..., numsr-1, numsr]</code> ，并返回其长度<strong>。</strong>如果不存在符合条件的子数组，返回 <code>0</code> 。</p>
+<p><strong>示例 1：</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入：target = 7, nums = [2,3,1,2,4,3]</span><br><span class="line">输出：2</span><br><span class="line">解释：子数组 [4,3] 是该条件下的长度最小的子数组。</span><br></pre></td></tr></table></figure>
+<p><strong>示例 2：</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入：target = 4, nums = [1,4,4]</span><br><span class="line">输出：1</span><br></pre></td></tr></table></figure>
+<p><strong>示例 3：</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入：target = 11, nums = [1,1,1,1,1,1,1,1]</span><br><span class="line">输出：0</span><br></pre></td></tr></table></figure>
+<p><strong>提示：</strong></p>
+<ul>
+<li><code>1 &lt;= target &lt;= 109</code></li>
+<li><code>1 &lt;= nums.length &lt;= 105</code></li>
+<li><code>1 &lt;= nums[i] &lt;= 105</code></li>
+</ul>
+<p><strong>进阶：</strong></p>
+<ul>
+<li>如果你已经实现 <code>O(n)</code> 时间复杂度的解法, 请尝试设计一个 <code>O(n log(n))</code> 时间复杂度的解法。</li>
+</ul>
+]]></content>
+      <tags>
+        <tag>leetcode</tag>
+        <tag>array</tag>
+        <tag>sliding-windows</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>刷题记录--双指针系列1</title>
+    <url>/2022/10/01/array-tags/</url>
+    <content><![CDATA[<h4 id="27-移除元素"><a href="#27-移除元素" class="headerlink" title="27. 移除元素"></a><a href="https://leetcode.cn/problems/remove-element/" target="_blank" rel="noopener">27. 移除元素</a></h4><p>难度简单1506收藏分享切换为英文接收动态反馈</p>
+<p>给你一个数组 <code>nums</code> 和一个值 <code>val</code>，你需要 <strong><a href="https://baike.baidu.com/item/原地算法" target="_blank" rel="noopener">原地</a></strong> 移除所有数值等于 <code>val</code> 的元素，并返回移除后数组的新长度。</p>
+<p>不要使用额外的数组空间，你必须仅使用 <code>O(1)</code> 额外空间并 <strong><a href="https://baike.baidu.com/item/原地算法" target="_blank" rel="noopener">原地 </a>修改输入数组</strong>。</p>
+<p>元素的顺序可以改变。你不需要考虑数组中超出新长度后面的元素。</p>
+<p><strong>说明:</strong></p>
+<p>为什么返回数值是整数，但输出的答案是数组呢?</p>
+<p>请注意，输入数组是以<strong>「引用」</strong>方式传递的，这意味着在函数里修改输入数组对于调用者是可见的。</p>
+<p>你可以想象内部操作如下:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">// nums 是以“引用”方式传递的。也就是说，不对实参作任何拷贝</span><br><span class="line">int len = removeElement(nums, val);</span><br><span class="line"></span><br><span class="line">// 在函数里修改输入数组对于调用者是可见的。</span><br><span class="line">// 根据你的函数返回的长度, 它会打印出数组中 该长度范围内 的所有元素。</span><br><span class="line">for (int i = 0; i &lt; len; i++) &#123;</span><br><span class="line">    print(nums[i]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>示例 1：</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入：nums = [3,2,2,3], val = 3</span><br><span class="line">输出：2, nums = [2,2]</span><br><span class="line">解释：函数应该返回新的长度 2, 并且 nums 中的前两个元素均为 2。你不需要考虑数组中超出新长度后面的元素。例如，函数返回的新长度为 2 ，而 nums = [2,2,3,3] 或 nums = [2,2,0,0]，也会被视作正确答案。</span><br></pre></td></tr></table></figure>
+<p><strong>示例 2：</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入：nums = [0,1,2,2,3,0,4,2], val = 2</span><br><span class="line">输出：5, nums = [0,1,4,0,3]</span><br><span class="line">解释：函数应该返回新的长度 5, 并且 nums 中的前五个元素为 0, 1, 3, 0, 4。注意这五个元素可为任意顺序。你不需要考虑数组中超出新长度后面的元素。</span><br></pre></td></tr></table></figure>
+<p><strong>提示：</strong></p>
+<ul>
+<li><code>0 &lt;= nums.length &lt;= 100</code></li>
+<li><code>0 &lt;= nums[i] &lt;= 50</code></li>
+<li><code>0 &lt;= val &lt;= 100</code></li>
+</ul>
+<p>题解：双指针解决</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">removeElement</span><span class="params">(self, nums, val)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        :type nums: List[int]</span></span><br><span class="line"><span class="string">        :type val: int</span></span><br><span class="line"><span class="string">        :rtype: int</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        slow = <span class="number">0</span></span><br><span class="line">        <span class="keyword">for</span> fast <span class="keyword">in</span> range(len(nums)):</span><br><span class="line">            <span class="keyword">if</span>(nums[fast]!=val):</span><br><span class="line">                nums[slow] = nums[fast] </span><br><span class="line">                slow += <span class="number">1</span></span><br><span class="line">        <span class="keyword">return</span> slow</span><br></pre></td></tr></table></figure>
+<ul>
+<li>时间复杂度：O(n)</li>
+<li>空间复杂度：O(1)</li>
+</ul>
+<h4 id="26-删除有序数组中的重复项"><a href="#26-删除有序数组中的重复项" class="headerlink" title="26. 删除有序数组中的重复项"></a><a href="https://leetcode.cn/problems/remove-duplicates-from-sorted-array/" target="_blank" rel="noopener">26. 删除有序数组中的重复项</a></h4><p>难度简单2859收藏分享切换为英文接收动态反馈</p>
+<p>给你一个 <strong>升序排列</strong> 的数组 <code>nums</code> ，请你<strong><a href="http://baike.baidu.com/item/原地算法" target="_blank" rel="noopener"> 原地</a></strong> 删除重复出现的元素，使每个元素 <strong>只出现一次</strong> ，返回删除后数组的新长度。元素的 <strong>相对顺序</strong> 应该保持 <strong>一致</strong> 。</p>
+<p>由于在某些语言中不能改变数组的长度，所以必须将结果放在数组nums的第一部分。更规范地说，如果在删除重复项之后有 <code>k</code> 个元素，那么 <code>nums</code> 的前 <code>k</code> 个元素应该保存最终结果。</p>
+<p>将最终结果插入 <code>nums</code> 的前 <code>k</code> 个位置后返回 <code>k</code> 。</p>
+<p>不要使用额外的空间，你必须在 <strong><a href="https://baike.baidu.com/item/原地算法" target="_blank" rel="noopener">原地 </a>修改输入数组</strong> 并在使用 O(1) 额外空间的条件下完成。</p>
+<p><strong>判题标准:</strong></p>
+<p>系统会用下面的代码来测试你的题解:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">int[] nums = [...]; // 输入数组</span><br><span class="line">int[] expectedNums = [...]; // 长度正确的期望答案</span><br><span class="line"></span><br><span class="line">int k = removeDuplicates(nums); // 调用</span><br><span class="line"></span><br><span class="line">assert k == expectedNums.length;</span><br><span class="line">for (int i = 0; i &lt; k; i++) &#123;</span><br><span class="line">    assert nums[i] == expectedNums[i];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>如果所有断言都通过，那么您的题解将被 <strong>通过</strong>。</p>
+<p><strong>示例 1：</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入：nums = [1,1,2]</span><br><span class="line">输出：2, nums = [1,2,_]</span><br><span class="line">解释：函数应该返回新的长度 2 ，并且原数组 nums 的前两个元素被修改为 1, 2 。不需要考虑数组中超出新长度后面的元素。</span><br></pre></td></tr></table></figure>
+<p><strong>示例 2：</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入：nums = [0,0,1,1,1,2,2,3,3,4]</span><br><span class="line">输出：5, nums = [0,1,2,3,4]</span><br><span class="line">解释：函数应该返回新的长度 5 ， 并且原数组 nums 的前五个元素被修改为 0, 1, 2, 3, 4 。不需要考虑数组中超出新长度后面的元素。</span><br></pre></td></tr></table></figure>
+<p><strong>提示：</strong></p>
+<ul>
+<li><code>1 &lt;= nums.length &lt;= 3 * 104</code></li>
+<li><code>-104 &lt;= nums[i] &lt;= 104</code></li>
+<li><code>nums</code> 已按 <strong>升序</strong> 排列</li>
+</ul>
+<p>题解：双指针，定义两个指针fast 和 slow 分别为快指针和慢指针，快指针表示遍历数组到达的下标位置，慢指针表示下一个不同元素要填入的下标位置，初始时两个指针都指向下标 1。假设数组 nums 的长度为 n。将快指针 fast 依次遍历从 1 到 n-1 的每个位置，对于每个位置，如果 nums[fast] != nums[fast-1]说明 nums[fast] 和之前的元素都不同，因此将nums[fast] 的值复制到 nums[slow]，然后将slow 的值加 1，即指向下一个位置。</p>
+<p>遍历结束之后，从 nums[0] 到nums[slow−1] 的每个元素都不相同且包含原数组中的每个不同的元素，因此新的长度即为slow，返回slow 即可。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">removeDuplicates</span><span class="params">(self, nums)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        :type nums: List[int]</span></span><br><span class="line"><span class="string">        :rtype: int</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        <span class="keyword">if</span> len(nums) == <span class="number">0</span>: <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">        slow, fast =  <span class="number">1</span>, <span class="number">1</span></span><br><span class="line">        <span class="keyword">while</span>(fast &lt; len(nums)):</span><br><span class="line">            <span class="keyword">if</span>(nums[fast] != nums[fast<span class="number">-1</span>]):</span><br><span class="line">                nums[slow] = nums[fast]</span><br><span class="line">                slow += <span class="number">1</span></span><br><span class="line">            fast += <span class="number">1</span></span><br><span class="line">        <span class="keyword">return</span> slow</span><br></pre></td></tr></table></figure>
+<ul>
+<li>时间复杂度：O(n)，其中 n<em>n</em> 是数组的长度。快指针和慢指针最多各移动 <em>n</em>次。</li>
+<li>空间复杂度：O(1)。只需要使用常数的额外空间。</li>
+</ul>
+<h4 id="283-移动零"><a href="#283-移动零" class="headerlink" title="283. 移动零"></a><a href="https://leetcode.cn/problems/move-zeroes/" target="_blank" rel="noopener">283. 移动零</a></h4><p>难度简单1749收藏分享切换为英文接收动态反馈</p>
+<p>给定一个数组 <code>nums</code>，编写一个函数将所有 <code>0</code> 移动到数组的末尾，同时保持非零元素的相对顺序。</p>
+<p><strong>请注意</strong> ，必须在不复制数组的情况下原地对数组进行操作。</p>
+<p><strong>示例 1:</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入: nums = [0,1,0,3,12]</span><br><span class="line">输出: [1,3,12,0,0]</span><br></pre></td></tr></table></figure>
+<p><strong>示例 2:</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入: nums = [0]</span><br><span class="line">输出: [0]</span><br></pre></td></tr></table></figure>
+<p><strong>提示</strong>:</p>
+<ul>
+<li><code>1 &lt;= nums.length &lt;= 104</code></li>
+<li><code>-231 &lt;= nums[i] &lt;= 231 - 1</code></li>
+</ul>
+<p>解法一：快慢指针，然后后面补0</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">moveZeroes</span><span class="params">(self, nums)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        :type nums: List[int]</span></span><br><span class="line"><span class="string">        :rtype: None Do not return anything, modify nums in-place instead.</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> nums:<span class="keyword">return</span> ;</span><br><span class="line">        slow = fast = <span class="number">0</span></span><br><span class="line">        count = <span class="number">0</span></span><br><span class="line">        <span class="keyword">while</span>(fast &lt; len(nums)):</span><br><span class="line">            <span class="keyword">if</span> (nums[fast]!= <span class="number">0</span>):</span><br><span class="line">                nums[slow] = nums[fast]</span><br><span class="line">                slow += <span class="number">1</span></span><br><span class="line">            fast += <span class="number">1</span></span><br><span class="line">        <span class="keyword">while</span>(slow &lt; len(nums)):</span><br><span class="line">            nums[slow] = <span class="number">0</span></span><br><span class="line">            slow += <span class="number">1</span></span><br><span class="line">        <span class="keyword">return</span> nums</span><br></pre></td></tr></table></figure>
+<p>解法二：直接交换</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">moveZeroes</span><span class="params">(self, nums: List[int])</span> -&gt; <span class="keyword">None</span>:</span></span><br><span class="line">        n = len(nums)</span><br><span class="line">        left = right = <span class="number">0</span></span><br><span class="line">        <span class="keyword">while</span> right &lt; n:</span><br><span class="line">            <span class="keyword">if</span> nums[right] != <span class="number">0</span>:</span><br><span class="line">                nums[left], nums[right] = nums[right], nums[left]</span><br><span class="line">                left += <span class="number">1</span></span><br><span class="line">            right += <span class="number">1</span></span><br></pre></td></tr></table></figure>
+<h4 id="844-比较含退格的字符串"><a href="#844-比较含退格的字符串" class="headerlink" title="844. 比较含退格的字符串"></a><a href="https://leetcode.cn/problems/backspace-string-compare/" target="_blank" rel="noopener">844. 比较含退格的字符串</a></h4><p>难度简单526收藏分享切换为英文接收动态反馈</p>
+<p>给定 <code>s</code> 和 <code>t</code> 两个字符串，当它们分别被输入到空白的文本编辑器后，如果两者相等，返回 <code>true</code> 。<code>#</code> 代表退格字符。</p>
+<p><strong>注意：</strong>如果对空文本输入退格字符，文本继续为空。 </p>
+<p><strong>示例 1：</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入：s = &quot;ab#c&quot;, t = &quot;ad#c&quot;</span><br><span class="line">输出：true</span><br><span class="line">解释：s 和 t 都会变成 &quot;ac&quot;。</span><br></pre></td></tr></table></figure>
+<p><strong>示例 2：</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入：s = &quot;ab##&quot;, t = &quot;c#d#&quot;</span><br><span class="line">输出：true</span><br><span class="line">解释：s 和 t 都会变成 &quot;&quot;。</span><br></pre></td></tr></table></figure>
+<p><strong>示例 3：</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入：s = &quot;a#c&quot;, t = &quot;b&quot;</span><br><span class="line">输出：false</span><br><span class="line">解释：s 会变成 &quot;c&quot;，但 t 仍然是 &quot;b&quot;。</span><br></pre></td></tr></table></figure>
+<p><strong>提示：</strong></p>
+<ul>
+<li><code>1 &lt;= s.length, t.length &lt;= 200</code></li>
+<li><code>s</code> 和 <code>t</code> 只含有小写字母以及字符 <code>&#39;#&#39;</code></li>
+</ul>
+<p><strong>进阶：</strong></p>
+<ul>
+<li>你可以用 <code>O(n)</code> 的时间复杂度和 <code>O(1)</code> 的空间复杂度解决该问题吗？</li>
+</ul>
+<p>解法一：利用栈来处理。最容易想到的方法是将给定的字符串中的退格符和应当被删除的字符都去除，还原给定字符串的一般形式。然后直接比较两字符串是否相等即可。具体地，我们用栈处理遍历过程，每次我们遍历到一个字符：如果它是退格符，那么我们将栈顶弹出；如果它是普通字符，那么我们将其压入栈中。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">backspaceCompare</span><span class="params">(self, S: str, T: str)</span> -&gt; bool:</span></span><br><span class="line">        <span class="function"><span class="keyword">def</span> <span class="title">build</span><span class="params">(s: str)</span> -&gt; str:</span></span><br><span class="line">            ret = list()</span><br><span class="line">            <span class="keyword">for</span> ch <span class="keyword">in</span> s:</span><br><span class="line">                <span class="keyword">if</span> ch != <span class="string">"#"</span>:</span><br><span class="line">                    ret.append(ch)</span><br><span class="line">                <span class="keyword">elif</span> ret:</span><br><span class="line">                    ret.pop()</span><br><span class="line">            <span class="keyword">return</span> <span class="string">""</span>.join(ret)</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> build(S) == build(T)</span><br></pre></td></tr></table></figure>
+<p>解法二：双指针实现</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">backspaceCompare</span><span class="params">(self, S: str, T: str)</span> -&gt; bool:</span></span><br><span class="line">        i, j = len(S) - <span class="number">1</span>, len(T) - <span class="number">1</span></span><br><span class="line">        skipS = skipT = <span class="number">0</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">while</span> i &gt;= <span class="number">0</span> <span class="keyword">or</span> j &gt;= <span class="number">0</span>:</span><br><span class="line">            <span class="keyword">while</span> i &gt;= <span class="number">0</span>:</span><br><span class="line">                <span class="keyword">if</span> S[i] == <span class="string">"#"</span>:</span><br><span class="line">                    skipS += <span class="number">1</span></span><br><span class="line">                    i -= <span class="number">1</span></span><br><span class="line">                <span class="keyword">elif</span> skipS &gt; <span class="number">0</span>:</span><br><span class="line">                    skipS -= <span class="number">1</span></span><br><span class="line">                    i -= <span class="number">1</span></span><br><span class="line">                <span class="keyword">else</span>:</span><br><span class="line">                    <span class="keyword">break</span></span><br><span class="line">            <span class="keyword">while</span> j &gt;= <span class="number">0</span>:</span><br><span class="line">                <span class="keyword">if</span> T[j] == <span class="string">"#"</span>:</span><br><span class="line">                    skipT += <span class="number">1</span></span><br><span class="line">                    j -= <span class="number">1</span></span><br><span class="line">                <span class="keyword">elif</span> skipT &gt; <span class="number">0</span>:</span><br><span class="line">                    skipT -= <span class="number">1</span></span><br><span class="line">                    j -= <span class="number">1</span></span><br><span class="line">                <span class="keyword">else</span>:</span><br><span class="line">                    <span class="keyword">break</span></span><br><span class="line">            <span class="keyword">if</span> i &gt;= <span class="number">0</span> <span class="keyword">and</span> j &gt;= <span class="number">0</span>:</span><br><span class="line">                <span class="keyword">if</span> S[i] != T[j]:</span><br><span class="line">                    <span class="keyword">return</span> <span class="keyword">False</span></span><br><span class="line">            <span class="keyword">elif</span> i &gt;= <span class="number">0</span> <span class="keyword">or</span> j &gt;= <span class="number">0</span>:</span><br><span class="line">                <span class="keyword">return</span> <span class="keyword">False</span></span><br><span class="line">            i -= <span class="number">1</span></span><br><span class="line">            j -= <span class="number">1</span></span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">True</span></span><br></pre></td></tr></table></figure>
+<h4 id="977-有序数组的平方"><a href="#977-有序数组的平方" class="headerlink" title="977. 有序数组的平方"></a><a href="https://leetcode.cn/problems/squares-of-a-sorted-array/" target="_blank" rel="noopener">977. 有序数组的平方</a></h4><p>难度简单640收藏分享切换为英文接收动态反馈</p>
+<p>给你一个按 <strong>非递减顺序</strong> 排序的整数数组 <code>nums</code>，返回 <strong>每个数字的平方</strong> 组成的新数组，要求也按 <strong>非递减顺序</strong> 排序。</p>
+<p><strong>示例 1：</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入：nums = [-4,-1,0,3,10]</span><br><span class="line">输出：[0,1,9,16,100]</span><br><span class="line">解释：平方后，数组变为 [16,1,0,9,100]</span><br><span class="line">排序后，数组变为 [0,1,9,16,100]</span><br></pre></td></tr></table></figure>
+<p><strong>示例 2：</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入：nums = [-7,-3,2,3,11]</span><br><span class="line">输出：[4,9,9,49,121]</span><br></pre></td></tr></table></figure>
+<p><strong>提示：</strong></p>
+<ul>
+<li><code>1 &lt;= nums.length &lt;= 104</code></li>
+<li><code>-104 &lt;= nums[i] &lt;= 104</code></li>
+<li><code>nums</code> 已按 <strong>非递减顺序</strong> 排序</li>
+</ul>
+<p><strong>进阶：</strong></p>
+<ul>
+<li>请你设计时间复杂度为 <code>O(n)</code> 的算法解决本问题</li>
+</ul>
+<p>解法1：暴力求解，直接算平方再排序，时间复杂度O(N+NlogN)</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">sortedSquares</span><span class="params">(self, nums)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        :type nums: List[int]</span></span><br><span class="line"><span class="string">        :rtype: List[int]</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> nums:<span class="keyword">return</span> ;</span><br><span class="line">        index = <span class="number">0</span></span><br><span class="line">        <span class="keyword">while</span>(index &lt; len(nums)):</span><br><span class="line">            nums[index] *= nums[index]</span><br><span class="line">            index += <span class="number">1</span></span><br><span class="line">            <span class="comment">#sort(nums)</span></span><br><span class="line">        <span class="comment">#return(nums)</span></span><br><span class="line">        <span class="keyword">return</span> sorted(nums)</span><br><span class="line">        </span><br><span class="line">      <span class="string">'''</span></span><br><span class="line"><span class="string">      ⚠️sorted和nums.sort()区别</span></span><br><span class="line"><span class="string">      1. sort 是应用在 list 上的方法，而sorted 可以对所有可迭代的对象进行排序操作；</span></span><br><span class="line"><span class="string">			2. sort是对原有列表进行操作，而sorted返回的是一个新的可迭代对象，不会改变原来的对象；</span></span><br><span class="line"><span class="string">			3. sort使用方法为list.sort()， 而sorted的使用方法为sorted(list)</span></span><br><span class="line"><span class="string">			sort()方法是在原地对列表排序，是对原列表的直接操作，并不会返回一个新的列表。sort()方法需要单独使用，如果和赋值，打印等方法一起使用，结果会返回None 。</span></span><br><span class="line"><span class="string">      '''</span></span><br></pre></td></tr></table></figure>
+<p>解法2：双指针，判断左侧和右侧的平方哪个大，则加入新建的结果集中</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">sortedSquares</span><span class="params">(self, nums)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        :type nums: List[int]</span></span><br><span class="line"><span class="string">        :rtype: List[int]</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> nums:<span class="keyword">return</span> ;</span><br><span class="line">        left, right = <span class="number">0</span>, len(nums)<span class="number">-1</span> </span><br><span class="line">        rst = []</span><br><span class="line">        <span class="keyword">while</span> (left &lt;= right):</span><br><span class="line">            <span class="keyword">if</span> nums[left]*nums[left] &gt;= nums[right]*nums[right]:</span><br><span class="line">                rst.append(nums[left]*nums[left])</span><br><span class="line">                left += <span class="number">1</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                rst.append(nums[right]*nums[right])</span><br><span class="line">                right -= <span class="number">1</span></span><br><span class="line">        <span class="keyword">return</span>(rst[::<span class="number">-1</span>])</span><br><span class="line">      </span><br><span class="line"><span class="comment"># 自己写的，最后需要逆序输出</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">sortedSquares</span><span class="params">(self, nums: List[int])</span> -&gt; List[int]:</span></span><br><span class="line">        n = len(nums)</span><br><span class="line">        i,j,k = <span class="number">0</span>,n - <span class="number">1</span>,n - <span class="number">1</span></span><br><span class="line">        ans = [<span class="number">-1</span>] * n</span><br><span class="line">        <span class="keyword">while</span> i &lt;= j:</span><br><span class="line">            lm = nums[i] ** <span class="number">2</span></span><br><span class="line">            rm = nums[j] ** <span class="number">2</span></span><br><span class="line">            <span class="keyword">if</span> lm &gt; rm:</span><br><span class="line">                ans[k] = lm</span><br><span class="line">                i += <span class="number">1</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                ans[k] = rm</span><br><span class="line">                j -= <span class="number">1</span></span><br><span class="line">            k -= <span class="number">1</span></span><br><span class="line">        <span class="keyword">return</span> ans</span><br></pre></td></tr></table></figure>
+]]></content>
+      <tags>
+        <tag>leetcode</tag>
+        <tag>array</tag>
+        <tag>double pointer</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>刷题记录--二分查找相关相关</title>
     <url>/2022/09/30/binary_search/</url>
     <content><![CDATA[<h3 id="刷题记录"><a href="#刷题记录" class="headerlink" title="刷题记录"></a>刷题记录</h3><h4 id="二分查找相关题目汇总"><a href="#二分查找相关题目汇总" class="headerlink" title="二分查找相关题目汇总"></a>二分查找相关题目汇总</h4><h4 id="704-二分查找"><a href="#704-二分查找" class="headerlink" title="704. 二分查找"></a><a href="https://leetcode.cn/problems/binary-search/" target="_blank" rel="noopener">704. 二分查找</a></h4><p>   难度简单1001收藏分享切换为英文接收动态反馈</p>
@@ -15,7 +164,7 @@
 <li><code>n</code> 将在 <code>[1, 10000]</code>之间。</li>
 <li><code>nums</code> 的每个元素都将在 <code>[-9999, 9999]</code>之间。</li>
 </ol>
-<p>  解析，两种方法，注意区间闭合情况，共三处不同，right初始值，while循环条件和right赋值情况(要简略就三个条件都简略，没有➖1没有等于)</p>
+<p>  解析，两种方法，注意区间闭合情况，共三处不同，right初始值，while循环条件和right赋值情况(要简略就三个条件都简略，没有➖1没有等于) 复杂度n log n</p>
 <ol>
 <li><p>区间左闭右开</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">search</span><span class="params">(nums, target)</span>:</span></span><br><span class="line">    left, right = <span class="number">0</span>, len(nums) </span><br><span class="line">    </span><br><span class="line">    <span class="keyword">while</span> left &lt; right:</span><br><span class="line">        middle = (left + right) // <span class="number">2</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> nums[middle] &lt; target:</span><br><span class="line">            left = middle + <span class="number">1</span></span><br><span class="line">        <span class="keyword">elif</span> nums[middle] &gt; target:</span><br><span class="line">            right = middle</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">return</span> middle</span><br><span class="line">    <span class="keyword">return</span> <span class="number">-1</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># nums = [-1,0,3,5,9,12]</span></span><br><span class="line"><span class="comment"># target = 2</span></span><br><span class="line"></span><br><span class="line">nums = [<span class="number">-1</span>,<span class="number">0</span>,<span class="number">3</span>,<span class="number">5</span>,<span class="number">9</span>,<span class="number">12</span>]</span><br><span class="line">target = <span class="number">9</span></span><br><span class="line"><span class="comment"># search(nums,5)</span></span><br><span class="line">print(search(nums,target))</span><br></pre></td></tr></table></figure>
@@ -121,6 +270,9 @@
 <li></li>
 </ol>
 ]]></content>
+      <categories>
+        <category>RL</category>
+      </categories>
       <tags>
         <tag>RL</tag>
       </tags>
