@@ -1,0 +1,982 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 3.7.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon1.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon2.ico">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css">
+  <script src="/lib/pace/pace.min.js"></script>
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"dongyan.site","root":"/","scheme":"Gemini","version":"7.7.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="深度学习数学基础微积分 泰勒展开  f(x) = \sum_{n=0}^{\infty}\frac{f^{n}(a)}{n!}(x-a)^{n}分别用$x+\epsilon 、x$替换原式中的$x和a$，则有">
+<meta name="keywords" content="DL">
+<meta property="og:type" content="article">
+<meta property="og:title" content="深度学习数学基础">
+<meta property="og:url" content="http://dongyan.site/2020/03/04/深度学习数学基础补充/index.html">
+<meta property="og:site_name" content="Tonya&#39;s Blog">
+<meta property="og:description" content="深度学习数学基础微积分 泰勒展开  f(x) = \sum_{n=0}^{\infty}\frac{f^{n}(a)}{n!}(x-a)^{n}分别用$x+\epsilon 、x$替换原式中的$x和a$，则有">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2022-10-01T18:51:59.560Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="深度学习数学基础">
+<meta name="twitter:description" content="深度学习数学基础微积分 泰勒展开  f(x) = \sum_{n=0}^{\infty}\frac{f^{n}(a)}{n!}(x-a)^{n}分别用$x+\epsilon 、x$替换原式中的$x和a$，则有">
+
+<link rel="canonical" href="http://dongyan.site/2020/03/04/深度学习数学基础补充/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true
+  };
+</script>
+
+  <title>深度学习数学基础 | Tonya's Blog</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Tonya's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <p class="site-subtitle">博观而约取，厚积而薄发</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>Archives</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>Categories</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>About</a>
+
+  </li>
+        <li class="menu-item menu-item-books">
+
+    <a href="/books" rel="section"><i class="fa fa-fw fa-book"></i>Books</a>
+
+  </li>
+        <li class="menu-item menu-item-movies">
+
+    <a href="/movies" rel="section"><i class="fa fa-fw fa-film"></i>Movies</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+
+</nav>
+  <div class="site-search">
+    <div class="popup search-popup">
+    <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocorrect="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result"></div>
+
+</div>
+<div class="search-pop-overlay"></div>
+
+  </div>
+</div>
+    </header>
+
+    
+  <div class="reading-progress-bar"></div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="en">
+    <link itemprop="mainEntityOfPage" href="http://dongyan.site/2020/03/04/深度学习数学基础补充/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpeg">
+      <meta itemprop="name" content="Tonya Tsao">
+      <meta itemprop="description" content="Great is the ordinary accumulation of tall.">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Tonya's Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          深度学习数学基础
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2020-03-04 00:45:20" itemprop="dateCreated datePublished" datetime="2020-03-04T00:45:20+08:00">2020-03-04</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-10-02 02:51:59" itemprop="dateModified" datetime="2022-10-02T02:51:59+08:00">2022-10-02</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/ML/" itemprop="url" rel="index"><span itemprop="name">ML</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="Views" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">Views: </span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine: </span>
+    
+    <a title="valine" href="/2020/03/04/深度学习数学基础补充/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/03/04/深度学习数学基础补充/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+<br>
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">Symbols count in article: </span>
+              <span>3.2k</span>
+            </span>
+            <span class="post-meta-item" title="Reading time">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">Reading time &asymp;</span>
+              <span>3 mins.</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h2 id="深度学习数学基础"><a href="#深度学习数学基础" class="headerlink" title="深度学习数学基础"></a>深度学习数学基础</h2><h3 id="微积分"><a href="#微积分" class="headerlink" title="微积分"></a>微积分</h3><ol>
+<li>泰勒展开</li>
+</ol>
+<script type="math/tex; mode=display">f(x) = \sum_{n=0}^{\infty}\frac{f^{n}(a)}{n!}(x-a)^{n}</script><p>分别用$x+\epsilon 、x$替换原式中的$x和a$，则有</p>
+<p>$f(x+\epsilon)=\sum_{n=0}^\infty\frac{f^n(x)}{n!}(x+\epsilon-x) $</p>
+<p>上式可看作$f(x+\epsilon)$在$x$处的泰勒展开，根据导数定义，当$\epsilon \to 0 $ 时，有</p>
+<script type="math/tex; mode=display">f^{'}{(x)} = \frac{f(x+\epsilon) - f(x)}{\epsilon}</script><p>则可得到：</p>
+<p>$ f(x+\epsilon) = f(x) + f^{‘}(x)\epsilon$</p>
+<h3 id="线性代数"><a href="#线性代数" class="headerlink" title="线性代数"></a>线性代数</h3><h5 id="矩阵基础"><a href="#矩阵基础" class="headerlink" title="矩阵基础"></a>矩阵基础</h5><p>矩阵转置：以主对角线为轴的镜像，左上到右下的对角线为主对角线。</p>
+<p>$ (\mathbf {A}^\top)<em>{j,i} = \mathbf{A}</em>{i,j} $</p>
+<p>单位矩阵：$\forall x\in \mathbf R^n，I_nX=X,其中I^n \in \mathbf R^{n * n}$</p>
+<p>矩阵的逆记为$A ^{-1}$,需满足：$A^{-1}A=I_n$</p>
+<p>若逆矩阵存在，则$Ax=b$中，对于每一个向量b恰好存在一个解，但是对于方程组而言，对于向量$b$的某些值，有可能无解，或者存在无限多个解。</p>
+<p>生成子空间：原始向量线性组合后所能抵达的点的集合。</p>
+<p> $Ax=b$是否有解，相当于确定向量$b$是否在$A$列向量的生成子空间中。这个特殊的生成子空间成为$A$的列空间或者$A$的值域。</p>
+<h5 id="线性相关，线性无关"><a href="#线性相关，线性无关" class="headerlink" title="线性相关，线性无关"></a>线性相关，线性无关</h5><p>线性无关：如果一组向量中任意一个向量不能表示称其他向量的线性组合，这组向量成为线性无关。</p>
+<p>使用矩阵逆求解，必须是方阵或者非奇异的。</p>
+<h5 id="范数"><a href="#范数" class="headerlink" title="范数"></a>范数</h5><p>公式：$||x||_p = (\sum_i|x_i|^p)^\frac{1}{p}$，其中$P \in \mathbf R,P \ge 1.$直观上范数衡量从原点到$x$的距离。<br>$L^2$范数成为欧几里得范数（Euclidean norm），经常简写为$||x||$.表示从原点出发到向量$x$确定点的欧氏距离。</p>
+<p>另外平方L2范数也经常用来衡量向量大小，更容易计算，$x^ \top x$.对元素的导数只取决于对应的元素，而L2范数对每个原色的导数和整个向量相关。但是平方L2范数在原点福建增长十分缓慢，某些机器学习应用中恰好需要区分零和非零值。此时转而使用在各个位置斜率相同且形式简单的L1范数。</p>
+<p>$L^1$范数：$||x||_1 = \sum_i|x_i|$.</p>
+<p>有时需要统计向量中非零元素的个数来衡量向量的大小，有些作者将这种函数称为$L^0$范数。但是该术语在数学意义上是不对的。非零数目不是范数，对向量缩放a倍不会改变该向量非零元素数目。因此L1范数经常作为表示非零元素数目的替代函数。<br>另外一个$L \infty $范数，也叫最大范数，公式：$||x||_\infty = max_i|x_i|$.</p>
+<p>深度学习中使用Frobenius范数，矩阵中元素平方和再开方。公式为：$||A||<em>F =\sqrt { \sum</em>{i,j}A_{i,j}^2}$<br>两个向量的点击可用范数表示：$x^\top y = ||x||_2||y||_2cos\theta$.</p>
+<h5 id="特殊类型矩阵和向量"><a href="#特殊类型矩阵和向量" class="headerlink" title="特殊类型矩阵和向量"></a>特殊类型矩阵和向量</h5><p>对角矩阵：旨在主对角线上含有非零元素，其他位置都是0.</p>
+<p>（注意：并非所有对角矩阵都是方阵，非方阵的对角矩阵没有逆矩阵，但是仍然可高效计算乘法。对于长方形对角矩阵$D$,$Dx$会涉及$x$中每个元素的缩放，如果$D_{m*n}$中，m&gt;n,则在缩放后去掉最后一些元素，反之，在末尾添加一些0.）<br>对称矩阵：$A = A^\top$<br>单位向量：具有单位范数的向量，$||x||_2 =1$.<br>正交矩阵：行向量和列向量粉饼标准正交的方阵。$A^\top A=AA^\top=I$.(若$x^\top y=0$，则向量$x$和向量$y$互相正交（orthogonal)，如果两个向量都有非零范数，则夹角是$90^\circ$.在$\mathbf R^n$中至多有$n$个范数非零向量互相正交，若其不但正交且范数都为1，则称为标准正交（orthonormal））。</p>
+<h5 id="特征分解"><a href="#特征分解" class="headerlink" title="特征分解"></a>特征分解</h5><p>将矩阵分解为一组特征向量和特征值<br>$Av=\lambda v$，则称$v$是特征向量，$\lambda$是特征值。</p>
+<p>$A$的特征分解：$A = V diag(\lambda) V^{-1}$.并非每个矩阵都可分解成特征值和特征向量，某些情况下，特征分解存在，但是会涉及复述和非实数。很多情况只考虑简单分解的矩阵，即每个实对称矩阵都可分解成特征向量和特征值。</p>
+<p>$A = Q \Lambda Q^\top$,其中$Q$是$A$的特征向量组成的正交矩阵，$\Lambda$是对角矩阵。特征分解可能并不惟一。（若两个或多个特征向量拥有相同的特征值，在由这些特征向量产生的生成子空间中，任意一组正交向量都是该特征值对应的特征向量。）</p>
+<p>通过特征分解可推导出：矩阵是奇异的当且仅当含有零特征值。</p>
+<p>所有特征值都是正数的矩阵称为正定（positive definite），都是非负数的矩阵称为半正定（positive semidefinite).反之为负定、半负定。</p>
+<p>半正定矩阵可保证：$\forall x,x ^\top Ax \ge 0.$正定矩阵可保证：$x\top Ax =0则x=0$.</p>
+<h5 id="奇异值分解"><a href="#奇异值分解" class="headerlink" title="奇异值分解"></a>奇异值分解</h5><p>奇异值分解（singular value decomposition，SVD）是将矩阵分解为奇异向量和奇异值，每个实矩阵都有一个奇异值分解，但不一定都有特征分解。例如非方阵的矩阵无特征分解，此时可用奇异值分解。</p>
+<p>$A = UDV^\top$,假设$A$是一个mxn的矩阵，则$U$是mxm，$D$是mxn，$V$是nxn的矩阵。其中$U、V$都是正交矩阵，$D$是对角矩阵，但$D$不一定是方阵。$D$对角线上的元素称为矩阵$A$的奇异值，$U、 V$的列向量分别称为左奇异向量和右奇异向量。</p>
+<p>（$A$的左奇异向量是$AA^\top$的特征向量，右奇异向量是$A^\top A$的特征向量，$A$的非零奇异值是$A^\top A$和$AA^\top$特征值的平方根。）</p>
+<h5 id="Moore-Penrose伪逆"><a href="#Moore-Penrose伪逆" class="headerlink" title="Moore-Penrose伪逆"></a>Moore-Penrose伪逆</h5><p>非方阵的逆矩阵没有定义，有时需要解如下问题：$Ax=y$,希望求解$A$的左逆$B$来解方程。$x=By$，若矩阵$A_{m*n}$中m&gt;n，则方程可能无解，反之可能有多个解。</p>
+<p>Moore-Penrose伪逆 pseudoinverse定义：$A^+ = \lim \limits_{a \searrow 0} (A^\top A + \alpha I)^{-1}A^\top $，但计算时则使用公式：$A^{+}=VD^+U^\top$.其中U、D、V是A奇异值分解后得到的矩阵，对角矩阵D的伪逆$D^+$是其非零元素取倒数之后再转置得到的。</p>
+<p>（A中n&gt;m,用伪逆求解线性方程是可能解法之一，$x=A^+y$是所有可行解中欧几里得范数最小的一个。m&gt;n时，可能无解，通过伪逆得到的x使得$||Ax-y||$的欧几里得距离最小。）</p>
+<h5 id="迹运算"><a href="#迹运算" class="headerlink" title="迹运算"></a>迹运算</h5><p>迹运算返回的事矩阵对角元素的和：$Tr(A) =\sum<em>iA</em>{i,j}$.</p>
+<p>Forbenius范数可表示为：$\left |A \right |_F=\sqrt {Tr(AA^ \top）}$</p>
+<p><script type="math/tex">Tr(\prod_{i=1}^nF^{(i)}=Tr(F^{(n)}\prod_{i=1}^{n-1}F^{(i)})</script>.即使循环置换后矩阵成绩得到的矩阵形状变了，但是迹运算结果不变。另外标量迹运算后仍是自己。</p>
+<h5 id="行列式"><a href="#行列式" class="headerlink" title="行列式"></a>行列式</h5><p>行列式，记为$det(A)$，是将方阵A映射到实数的函数。行列式等于矩阵特征值的乘积。行列式绝对值颗用来衡量矩阵参与矩阵乘法后空间扩大或缩小了多少。</p>
+<h5 id="主成分分析"><a href="#主成分分析" class="headerlink" title="主成分分析"></a>主成分分析</h5><p>待补充</p>
+<h3 id="概率论"><a href="#概率论" class="headerlink" title="概率论"></a>概率论</h3>
+    </div>
+
+    
+    
+    
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>Post author:  </strong>Tonya Tsao
+  </li>
+  <li class="post-copyright-link">
+    <strong>Post link: </strong>
+    <a href="http://dongyan.site/2020/03/04/深度学习数学基础补充/" title="深度学习数学基础">http://dongyan.site/2020/03/04/深度学习数学基础补充/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/en" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> unless stating additionally.
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+          
+          <div class="post-tags">
+              <a href="/tags/DL/" rel="tag"><i class="fa fa-tag"></i> DL</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/03/04/机器学习概览/" rel="prev" title="机器学习概览（ML_NG 1）">
+      <i class="fa fa-chevron-left"></i> 机器学习概览（ML_NG 1）
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/03/05/“Markdown-latex-syntax”/" rel="next" title="Markdown中Latex常用语法">
+      Markdown中Latex常用语法 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let activeClass = CONFIG.comments.activeClass;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#深度学习数学基础"><span class="nav-text">深度学习数学基础</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#微积分"><span class="nav-text">微积分</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#线性代数"><span class="nav-text">线性代数</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#矩阵基础"><span class="nav-text">矩阵基础</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#线性相关，线性无关"><span class="nav-text">线性相关，线性无关</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#范数"><span class="nav-text">范数</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#特殊类型矩阵和向量"><span class="nav-text">特殊类型矩阵和向量</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#特征分解"><span class="nav-text">特征分解</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#奇异值分解"><span class="nav-text">奇异值分解</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Moore-Penrose伪逆"><span class="nav-text">Moore-Penrose伪逆</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#迹运算"><span class="nav-text">迹运算</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#行列式"><span class="nav-text">行列式</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#主成分分析"><span class="nav-text">主成分分析</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#概率论"><span class="nav-text">概率论</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Tonya Tsao"
+      src="/images/avatar.jpeg">
+  <p class="site-author-name" itemprop="name">Tonya Tsao</p>
+  <div class="site-description" itemprop="description">Great is the ordinary accumulation of tall.</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">13</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">13</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+
+    <div class="links-of-blogroll motion-element links-of-blogroll-block">
+      <div class="links-of-blogroll-title">
+        <!-- modify icon to fire by szw -->
+        <i class="fa fa-history fa-" aria-hidden="true"></i>
+        近期文章
+      </div>
+      <ul class="links-of-blogroll-list">
+        
+        
+          <li>
+            <a href="/2022/10/02/LEETCODE/about-array/" title="刷题记录--数组小结" target="_blank">刷题记录--数组小结</a>
+          </li>
+        
+          <li>
+            <a href="/2022/10/02/LEETCODE/spiral-matrix/" title="刷题记录--模拟行为（矩阵相关）" target="_blank">刷题记录--模拟行为（矩阵相关）</a>
+          </li>
+        
+          <li>
+            <a href="/2022/10/01/LEETCODE/sliding-windows/" title="刷题记录--滑动窗口相关" target="_blank">刷题记录--滑动窗口相关</a>
+          </li>
+        
+          <li>
+            <a href="/2022/10/01/LEETCODE/array-tags/" title="刷题记录--双指针系列1" target="_blank">刷题记录--双指针系列1</a>
+          </li>
+        
+          <li>
+            <a href="/2022/09/30/LEETCODE/binary_search/" title="刷题记录--二分查找相关相关" target="_blank">刷题记录--二分查找相关相关</a>
+          </li>
+        
+      </ul>
+    </div>
+
+
+<div style="">
+  <canvas id="canvas" style="width:60%;">当前浏览器不支持canvas，请更换浏览器后再试</canvas>
+</div>
+<script>
+(function(){
+
+   var digit=
+    [
+        [
+            [0,0,1,1,1,0,0],
+            [0,1,1,0,1,1,0],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [0,1,1,0,1,1,0],
+            [0,0,1,1,1,0,0]
+        ],//0
+        [
+            [0,0,0,1,1,0,0],
+            [0,1,1,1,1,0,0],
+            [0,0,0,1,1,0,0],
+            [0,0,0,1,1,0,0],
+            [0,0,0,1,1,0,0],
+            [0,0,0,1,1,0,0],
+            [0,0,0,1,1,0,0],
+            [0,0,0,1,1,0,0],
+            [0,0,0,1,1,0,0],
+            [1,1,1,1,1,1,1]
+        ],//1
+        [
+            [0,1,1,1,1,1,0],
+            [1,1,0,0,0,1,1],
+            [0,0,0,0,0,1,1],
+            [0,0,0,0,1,1,0],
+            [0,0,0,1,1,0,0],
+            [0,0,1,1,0,0,0],
+            [0,1,1,0,0,0,0],
+            [1,1,0,0,0,0,0],
+            [1,1,0,0,0,1,1],
+            [1,1,1,1,1,1,1]
+        ],//2
+        [
+            [1,1,1,1,1,1,1],
+            [0,0,0,0,0,1,1],
+            [0,0,0,0,1,1,0],
+            [0,0,0,1,1,0,0],
+            [0,0,1,1,1,0,0],
+            [0,0,0,0,1,1,0],
+            [0,0,0,0,0,1,1],
+            [0,0,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [0,1,1,1,1,1,0]
+        ],//3
+        [
+            [0,0,0,0,1,1,0],
+            [0,0,0,1,1,1,0],
+            [0,0,1,1,1,1,0],
+            [0,1,1,0,1,1,0],
+            [1,1,0,0,1,1,0],
+            [1,1,1,1,1,1,1],
+            [0,0,0,0,1,1,0],
+            [0,0,0,0,1,1,0],
+            [0,0,0,0,1,1,0],
+            [0,0,0,1,1,1,1]
+        ],//4
+        [
+            [1,1,1,1,1,1,1],
+            [1,1,0,0,0,0,0],
+            [1,1,0,0,0,0,0],
+            [1,1,1,1,1,1,0],
+            [0,0,0,0,0,1,1],
+            [0,0,0,0,0,1,1],
+            [0,0,0,0,0,1,1],
+            [0,0,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [0,1,1,1,1,1,0]
+        ],//5
+        [
+            [0,0,0,0,1,1,0],
+            [0,0,1,1,0,0,0],
+            [0,1,1,0,0,0,0],
+            [1,1,0,0,0,0,0],
+            [1,1,0,1,1,1,0],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [0,1,1,1,1,1,0]
+        ],//6
+        [
+            [1,1,1,1,1,1,1],
+            [1,1,0,0,0,1,1],
+            [0,0,0,0,1,1,0],
+            [0,0,0,0,1,1,0],
+            [0,0,0,1,1,0,0],
+            [0,0,0,1,1,0,0],
+            [0,0,1,1,0,0,0],
+            [0,0,1,1,0,0,0],
+            [0,0,1,1,0,0,0],
+            [0,0,1,1,0,0,0]
+        ],//7
+        [
+            [0,1,1,1,1,1,0],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [0,1,1,1,1,1,0],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [0,1,1,1,1,1,0]
+        ],//8
+        [
+            [0,1,1,1,1,1,0],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [0,1,1,1,0,1,1],
+            [0,0,0,0,0,1,1],
+            [0,0,0,0,0,1,1],
+            [0,0,0,0,1,1,0],
+            [0,0,0,1,1,0,0],
+            [0,1,1,0,0,0,0]
+        ],//9
+        [
+            [0,0,0,0,0,0,0],
+            [0,0,1,1,1,0,0],
+            [0,0,1,1,1,0,0],
+            [0,0,1,1,1,0,0],
+            [0,0,0,0,0,0,0],
+            [0,0,0,0,0,0,0],
+            [0,0,1,1,1,0,0],
+            [0,0,1,1,1,0,0],
+            [0,0,1,1,1,0,0],
+            [0,0,0,0,0,0,0]
+        ]//:
+    ];
+
+var canvas = document.getElementById('canvas');
+
+if(canvas.getContext){
+    var cxt = canvas.getContext('2d');
+    //声明canvas的宽高
+    var H = 100,W = 700;
+    canvas.height = H;
+    canvas.width = W;
+    cxt.fillStyle = '#f00';
+    cxt.fillRect(10,10,50,50);
+
+    //存储时间数据
+    var data = [];
+    //存储运动的小球
+    var balls = [];
+    //设置粒子半径
+    var R = canvas.height/20-1;
+    (function(){
+        var temp = /(\d)(\d):(\d)(\d):(\d)(\d)/.exec(new Date());
+        //存储时间数字，由十位小时、个位小时、冒号、十位分钟、个位分钟、冒号、十位秒钟、个位秒钟这7个数字组成
+        data.push(temp[1],temp[2],10,temp[3],temp[4],10,temp[5],temp[6]);
+    })();
+
+    /*生成点阵数字*/
+    function renderDigit(index,num){
+        for(var i = 0; i < digit[num].length; i++){
+            for(var j = 0; j < digit[num][i].length; j++){
+                if(digit[num][i][j] == 1){
+                    cxt.beginPath();
+                    cxt.arc(14*(R+2)*index + j*2*(R+1)+(R+1),i*2*(R+1)+(R+1),R,0,2*Math.PI);
+                    cxt.closePath();
+                    cxt.fill();
+                }
+            }
+        }
+    }
+
+    /*更新时钟*/
+    function updateDigitTime(){
+        var changeNumArray = [];
+        var temp = /(\d)(\d):(\d)(\d):(\d)(\d)/.exec(new Date());
+        var NewData = [];
+        NewData.push(temp[1],temp[2],10,temp[3],temp[4],10,temp[5],temp[6]);
+        for(var i = data.length-1; i >=0 ; i--){
+            //时间发生变化
+            if(NewData[i] !== data[i]){
+                //将变化的数字值和在data数组中的索引存储在changeNumArray数组中
+                changeNumArray.push(i+'_'+(Number(data[i])+1)%10);
+            }
+        }
+        //增加小球
+        for(var i = 0; i< changeNumArray.length; i++){
+            addBalls.apply(this,changeNumArray[i].split('_'));
+        }
+        data = NewData.concat();
+    }
+
+    /*更新小球状态*/
+    function updateBalls(){
+        for(var i = 0; i < balls.length; i++){
+            balls[i].stepY += balls[i].disY;
+            balls[i].x += balls[i].stepX;
+            balls[i].y += balls[i].stepY;
+            if(balls[i].x > W + R || balls[i].y > H + R){
+                balls.splice(i,1);
+                i--;
+            }
+        }
+    }
+
+    /*增加要运动的小球*/
+    function addBalls(index,num){
+        var numArray = [1,2,3];
+        var colorArray =  ["#3BE","#09C","#A6C","#93C","#9C0","#690","#FB3","#F80","#F44","#C00"];
+        for(var i = 0; i < digit[num].length; i++){
+            for(var j = 0; j < digit[num][i].length; j++){
+                if(digit[num][i][j] == 1){
+                    var ball = {
+                        x:14*(R+2)*index + j*2*(R+1)+(R+1),
+                        y:i*2*(R+1)+(R+1),
+                        stepX:Math.floor(Math.random() * 4 -2),
+                        stepY:-2*numArray[Math.floor(Math.random()*numArray.length)],
+                        color:colorArray[Math.floor(Math.random()*colorArray.length)],
+                        disY:1
+                    };
+                    balls.push(ball);
+                }
+            }
+        }
+    }
+
+    /*渲染*/
+    function render(){
+        //重置画布宽度，达到清空画布的效果
+        canvas.height = 100;
+        //渲染时钟
+        for(var i = 0; i < data.length; i++){
+            renderDigit(i,data[i]);
+        }
+        //渲染小球
+        for(var i = 0; i < balls.length; i++){
+            cxt.beginPath();
+            cxt.arc(balls[i].x,balls[i].y,R,0,2*Math.PI);
+            cxt.fillStyle = balls[i].color;
+            cxt.closePath();
+            cxt.fill();
+        }
+    }
+
+    clearInterval(oTimer);
+    var oTimer = setInterval(function(){
+        //更新时钟
+        updateDigitTime();
+        //更新小球状态
+        updateBalls();
+        //渲染
+        render();
+    },50);
+}
+
+})();
+</script>
+
+      </div>
+        <div class="back-to-top motion-element">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Tonya Tsao</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    <span title="Symbols count total">28k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="Reading time total">25 mins.</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.7.1
+  </div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">Theme – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.7.2
+  </div>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="Total Visitors">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="Total Views">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script>
+<script src="/js/schemes/pisces.js"></script>
+<script src="/js/next-boot.js"></script>
+
+
+
+  
+
+
+
+
+  <script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
+
+  
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el         : '#valine-comments',
+      verify     : false,
+      notify     : false,
+      appId      : 'MstaooMcXC99UoPDTQnnzYeD-MdYXbMMI',
+      appKey     : 'j0udp2SUfcslQd271rdAPsKR',
+      placeholder: "Just go go",
+      avatar     : 'mm',
+      meta       : guest,
+      pageSize   : '10' || 10,
+      visitor    : false,
+      lang       : 'en' || 'zh-cn',
+      path       : location.pathname,
+      recordIP   : false,
+      serverURLs : ''
+    });
+  }, window.Valine);
+});
+</script>
+
+
+  <script async src="/js/cursor/fireworks.js"></script>
+
+
+
+
+  <script src="/js/activate-power-mode.min.js"></script>
+  <script>
+    POWERMODE.colorful = true;
+    POWERMODE.shake = false;
+    document.body.addEventListener('input', POWERMODE);
+  </script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+</body>
+</html>

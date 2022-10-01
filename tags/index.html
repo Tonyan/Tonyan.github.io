@@ -14,12 +14,13 @@
 
 
 <link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
   <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css">
   <script src="/lib/pace/pace.min.js"></script>
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"dongyan.site","root":"/","scheme":"Gemini","version":"7.7.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+    var CONFIG = {"hostname":"dongyan.site","root":"/","scheme":"Gemini","version":"7.7.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
   <meta name="description" content="Great is the ordinary accumulation of tall.">
@@ -221,12 +222,47 @@
       <div class="post-body">
           <div class="tag-cloud">
             <div class="tag-cloud-title">
-              9 tags in total
+              6 tags in total
             </div>
             <div class="tag-cloud-tags">
-              <a href="/tags/RL/" style="font-size: 12px; color: #ccc">RL</a> <a href="/tags/array/" style="font-size: 21px; color: #6f6f6f">array</a> <a href="/tags/double-pointer/" style="font-size: 12px; color: #ccc">double pointer</a> <a href="/tags/leetcode/" style="font-size: 30px; color: #111">leetcode</a> <a href="/tags/sliding-windows/" style="font-size: 12px; color: #ccc">sliding-windows</a>
+              <a href="/tags/DL/" style="font-size: 21px; color: #6f6f6f">DL</a> <a href="/tags/ML/" style="font-size: 21px; color: #6f6f6f">ML</a> <a href="/tags/NLP/" style="font-size: 12px; color: #ccc">NLP</a> <a href="/tags/RL/" style="font-size: 12px; color: #ccc">RL</a> <a href="/tags/leetcode/" style="font-size: 30px; color: #111">leetcode</a> <a href="/tags/技术/" style="font-size: 12px; color: #ccc">技术</a>
             </div>
           </div>
+        <script type="text/javascript">
+     var alltags = document.getElementsByClassName('tag-cloud-tags');
+     var tags = alltags[0].getElementsByTagName('a');
+     for (var i = tags.length - 1; i >= 0; i--) {
+       var r=Math.floor(Math.random()*75+130);
+       var g=Math.floor(Math.random()*75+100);
+       var b=Math.floor(Math.random()*75+80);
+       tags[i].style.background = "rgb("+r+","+g+","+b+")";
+     }
+</script>
+
+<style>
+  .tag-cloud-tags{
+    /*font-family: Helvetica, Tahoma, Arial;*/
+    /*font-weight: 100;*/
+    text-align: center;
+    counter-reset: tags;
+  }
+  .tag-cloud-tags a{
+    border-radius: 6px;
+    padding-right: 5px;
+    padding-left: 5px;
+    margin: 8px 5px 0px 0px;
+  }
+  .tag-cloud-tags a:before{
+    content: "🔖";
+  }
+
+  .tag-cloud-tags a:hover{
+     box-shadow: 0px 5px 15px 0px rgba(0,0,0,.4);
+     transform: scale(1.1);
+     /*box-shadow: 10px 10px 15px 2px rgba(0,0,0,.12), 0 0 6px 0 rgba(104, 104, 105, 0.1);*/
+     transition-duration: 0.15s;
+  }
+</style>
         
       </div>
       
@@ -304,20 +340,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">4</span>
+          <span class="site-state-item-count">13</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-count">13</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-count">6</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -336,19 +372,23 @@
         
         
           <li>
-            <a href="/2022/10/01/sliding-windows/" title="刷题记录--滑动窗口相关" target="_blank">刷题记录--滑动窗口相关</a>
+            <a href="/2022/10/02/LEETCODE/about-array/" title="刷题记录--数组小结" target="_blank">刷题记录--数组小结</a>
           </li>
         
           <li>
-            <a href="/2022/10/01/array-tags/" title="刷题记录--双指针系列1" target="_blank">刷题记录--双指针系列1</a>
+            <a href="/2022/10/02/LEETCODE/spiral-matrix/" title="刷题记录--模拟行为（矩阵相关）" target="_blank">刷题记录--模拟行为（矩阵相关）</a>
           </li>
         
           <li>
-            <a href="/2022/09/30/binary_search/" title="刷题记录--二分查找相关相关" target="_blank">刷题记录--二分查找相关相关</a>
+            <a href="/2022/10/01/LEETCODE/sliding-windows/" title="刷题记录--滑动窗口相关" target="_blank">刷题记录--滑动窗口相关</a>
           </li>
         
           <li>
-            <a href="/2022/09/25/RL/ES-算法介绍/" title="ES 算法介绍" target="_blank">ES 算法介绍</a>
+            <a href="/2022/10/01/LEETCODE/array-tags/" title="刷题记录--双指针系列1" target="_blank">刷题记录--双指针系列1</a>
+          </li>
+        
+          <li>
+            <a href="/2022/09/30/LEETCODE/binary_search/" title="刷题记录--二分查找相关相关" target="_blank">刷题记录--二分查找相关相关</a>
           </li>
         
       </ul>
@@ -650,12 +690,12 @@ if(canvas.getContext){
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
-    <span title="Symbols count total">12k</span>
+    <span title="Symbols count total">28k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">11 mins.</span>
+    <span title="Reading time total">25 mins.</span>
 </div>
   <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.7.1
   </div>
@@ -698,6 +738,8 @@ if(canvas.getContext){
 
   
   <script src="/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
   <script src="/lib/velocity/velocity.min.js"></script>
   <script src="/lib/velocity/velocity.ui.min.js"></script>
 <script src="/js/utils.js"></script><script src="/js/motion.js"></script>
